@@ -1,0 +1,3 @@
+[submodule "infra/graphrag-upstream"]
+	path = infra/graphrag-upstream
+	url = https://github.com/tigergraph/graphrag
