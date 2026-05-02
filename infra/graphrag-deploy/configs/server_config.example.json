@@ -1,0 +1,59 @@
+{
+  "_comment": "Copy this to server_config.json and replace the SAVANNA_* and GEMINI_* placeholders. server_config.json is gitignored.",
+
+  "db_config": {
+    "hostname": "https://SAVANNA_HOSTNAME.tgcloud.io",
+    "restppPort": "443",
+    "gsPort": "443",
+    "username": "SAVANNA_USERNAME",
+    "password": "SAVANNA_PASSWORD",
+    "getToken": true,
+    "default_timeout": 300,
+    "default_mem_threshold": 5000,
+    "default_thread_limit": 8
+  },
+
+  "graphrag_config": {
+    "reuse_embedding": true,
+    "ecc": "http://graphrag-ecc:8001",
+    "chat_history_api": "http://chat-history:8002",
+    "chunker_config": {}
+  },
+
+  "llm_config": {
+    "token_limit": 0,
+    "authentication_configuration": {
+      "GOOGLE_API_KEY": "GEMINI_API_KEY_HERE"
+    },
+    "embedding_service": {
+      "model_name": "models/text-embedding-004",
+      "embedding_model_service": "google_genai"
+    },
+    "completion_service": {
+      "llm_service": "google_genai",
+      "llm_model": "gemini-2.5-pro",
+      "model_kwargs": {
+        "temperature": 0
+      },
+      "prompt_path": "./common/prompts/google_genai/"
+    },
+    "multimodal_service": {
+      "llm_service": "google_genai",
+      "llm_model": "gemini-2.5-pro",
+      "model_kwargs": {
+        "temperature": 0
+      }
+    }
+  },
+
+  "chat_config": {
+    "apiPort": "8002",
+    "dbPath": "chats.db",
+    "dbLogPath": "db.log",
+    "logPath": "requestLogs.jsonl",
+    "conversationAccessRoles": [
+      "superuser",
+      "globaldesigner"
+    ]
+  }
+}

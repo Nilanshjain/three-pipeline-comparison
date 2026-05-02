@@ -1,0 +1,57 @@
+# DevRAG GraphRAG deployment.
+#
+# Runs the tigergraph/graphrag service stack locally and points it at a
+# Savanna-hosted TigerGraph database via configs/server_config.json.
+#
+# Host port mapping (left side) avoids collisions with DevRAG's own ports
+# (backend 8000, frontend 3000):
+#
+#   graphrag        host 8800 -> container 8000  (Pipeline 3 hits this)
+#   graphrag-ecc    host 8801 -> container 8001
+#   chat-history    host 8802 -> container 8002
+#
+# We skip the upstream nginx + graphrag-ui services — DevRAG has its own
+# dashboard, no need to also run their UI.
+
+services:
+  graphrag:
+    image: tigergraph/graphrag:latest
+    platform: linux/amd64
+    container_name: devrag-graphrag
+    ports:
+      - "8800:8000"
+    depends_on:
+      - graphrag-ecc
+      - chat-history
+    environment:
+      SERVER_CONFIG: "/code/configs/server_config.json"
+      LOGLEVEL: "INFO"
+      USE_CYPHER: "true"
+    volumes:
+      - ./configs/:/code/configs
+      - ../../data:/data
+
+  graphrag-ecc:
+    image: tigergraph/graphrag-ecc:latest
+    platform: linux/amd64
+    container_name: devrag-graphrag-ecc
+    ports:
+      - "8801:8001"
+    environment:
+      SERVER_CONFIG: "/code/configs/server_config.json"
+      LOGLEVEL: "INFO"
+      INIT_EMBED_STORE: "false"
+    volumes:
+      - ./configs/:/code/configs
+
+  chat-history:
+    image: tigergraph/chat-history:latest
+    platform: linux/amd64
+    container_name: devrag-chat-history
+    ports:
+      - "8802:8002"
+    environment:
+      CONFIG_FILES: "/configs/server_config.json"
+      LOGLEVEL: "INFO"
+    volumes:
+      - ./configs/:/configs
