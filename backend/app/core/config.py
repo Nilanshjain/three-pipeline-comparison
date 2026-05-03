@@ -36,6 +36,25 @@ class Settings(BaseSettings):
     openai_api_key: Optional[str] = None
     gemini_api_key: Optional[str] = None
     google_api_key: Optional[str] = None
+    groq_api_key: Optional[str] = None
+
+    # LLM provider switch — all three pipelines read these.
+    # provider: "groq" (default, zero-cost via Llama 3.3 70B free tier) or "gemini".
+    # Keeping this configurable lets us flip back to Gemini in one env var if
+    # Groq rate-limits us mid-eval.
+    llm_provider: str = "groq"
+    llm_model: str = "llama-3.3-70b-versatile"
+
+    # Hugging Face (used by LLM-as-Judge evaluator)
+    hf_token: Optional[str] = None
+
+    # TigerGraph GraphRAG (Pipeline 3)
+    # GraphRAG runs locally via docker-compose (infra/graphrag-deploy/) and
+    # connects to Savanna for the underlying TigerGraph database.
+    tg_graphrag_url: str = "http://localhost:8800"  # host port we map to graphrag:8000
+    tg_username: Optional[str] = None               # TigerGraph DB username (basic auth)
+    tg_password: Optional[str] = None               # TigerGraph DB password (basic auth)
+    tg_graph_name: str = "DevRAG"                   # graph name created in Savanna
 
     # Application settings
     environment: str = "development"
