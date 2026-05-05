@@ -10,9 +10,17 @@ from typing import List, Tuple, Optional, Dict, Any
 from sqlalchemy import Column, Integer, Text, ARRAY, Float, DateTime, func
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session
-from sklearn.metrics.pairwise import cosine_similarity
 import json
 import logging
+
+
+def _cosine_similarity(query: np.ndarray, doc: np.ndarray) -> float:
+    """Numpy-only cosine, used in place of sklearn to keep module-load light."""
+    qn = np.linalg.norm(query)
+    dn = np.linalg.norm(doc)
+    if qn == 0 or dn == 0:
+        return 0.0
+    return float(np.dot(query, doc) / (qn * dn))
 
 from .database import Base
 
@@ -143,15 +151,12 @@ class PostgreSQLVectorStorage:
             # Calculate similarities
             results = []
             all_similarities = []
-            query_vector = np.array(query_embedding).reshape(1, -1)
-
+            query_vec_flat = np.array(query_embedding)
             for doc in documents:
                 doc_embedding = doc.get_embedding()
                 if doc_embedding:
-                    doc_vector = np.array(doc_embedding).reshape(1, -1)
-
-                    # Calculate cosine similarity
-                    similarity = cosine_similarity(query_vector, doc_vector)[0][0]
+                    doc_vec_flat = np.array(doc_embedding)
+                    similarity = _cosine_similarity(query_vec_flat, doc_vec_flat)
                     all_similarities.append(similarity)
 
                     if similarity >= similarity_threshold:
