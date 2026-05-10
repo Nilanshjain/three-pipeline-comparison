@@ -3,11 +3,13 @@ import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
 import { Textarea } from './components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './components/ui/card';
-import { Upload, Send, FileText, Bot, User, Info, AlertCircle, Loader2 } from 'lucide-react';
+import { Upload, Send, FileText, Bot, User, Info, AlertCircle, Loader2, MessageSquare, BarChart3 } from 'lucide-react';
+import Compare from './pages/Compare';
 
 const API_BASE_URL = 'http://localhost:8000/api/v1';
 
 function App() {
+  const [view, setView] = useState('compare'); // 'compare' is the hackathon dashboard; 'chat' is a legacy pre-hackathon view kept for reference
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -153,13 +155,19 @@ function App() {
     <div className="min-h-screen w-full p-4 md:p-8">
       <div className="max-w-6xl mx-auto space-y-6">
         {/* Header */}
-        <div className="text-center space-y-2 py-8">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-rust-400 via-rust-500 to-rust-600 bg-clip-text text-transparent drop-shadow-lg">
-            DevRAG
+        <div className="text-center space-y-1 py-5">
+          <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-rust-400 via-rust-500 to-rust-600 bg-clip-text text-transparent">
+            Token Comparison Across Three RAG Pipelines
           </h1>
-          <p className="text-metal-300 text-lg">Chat with your documents using AI</p>
+          <p className="text-metal-400 text-xs md:text-sm">
+            LLM-Only · Basic RAG · GraphRAG (TigerGraph) · full methodology in the README
+          </p>
         </div>
 
+        {view === 'compare' ? (
+          <Compare />
+        ) : (
+        <>
         {/* File Upload Section */}
         <Card className="border-metal-600 shadow-2xl">
           <CardHeader>
@@ -236,7 +244,7 @@ function App() {
                     <Bot className="w-10 h-10 text-rust-400" />
                   </div>
                   <div className="space-y-2">
-                    <h2 className="text-2xl font-semibold text-rust-400">Welcome to DevRAG</h2>
+                    <h2 className="text-2xl font-semibold text-rust-400">Welcome</h2>
                     <p className="text-metal-400 max-w-md">Upload a document above to get started, then ask questions about it.</p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl">
@@ -391,6 +399,8 @@ function App() {
             </div>
           </CardContent>
         </Card>
+        </>
+        )}
       </div>
     </div>
   );
