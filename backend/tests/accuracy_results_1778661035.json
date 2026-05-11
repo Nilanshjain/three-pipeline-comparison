@@ -1,0 +1,591 @@
+{
+  "summary": {
+    "llm_only": {
+      "n_questions": 5,
+      "n_errors": 0,
+      "judge_pass_rate": 1.0,
+      "judge_n": 5,
+      "bertscore_f1_raw_mean": null,
+      "bertscore_f1_rescaled_mean": null,
+      "mean_total_tokens": 167.0,
+      "mean_latency_ms": 612.3335399897769,
+      "mean_cost_usd": 0.0
+    },
+    "basic_rag": {
+      "n_questions": 5,
+      "n_errors": 0,
+      "judge_pass_rate": 0.8,
+      "judge_n": 5,
+      "bertscore_f1_raw_mean": null,
+      "bertscore_f1_rescaled_mean": null,
+      "mean_total_tokens": 1137.8,
+      "mean_latency_ms": 11771.632739994675,
+      "mean_cost_usd": 0.0
+    },
+    "graph_rag": {
+      "n_questions": 5,
+      "n_errors": 1,
+      "judge_pass_rate": 1.0,
+      "judge_n": 4,
+      "bertscore_f1_raw_mean": null,
+      "bertscore_f1_rescaled_mean": null,
+      "mean_total_tokens": 9326.5,
+      "mean_latency_ms": 10282.9941999953,
+      "mean_cost_usd": 0.0
+    }
+  },
+  "results": [
+    {
+      "id": 1,
+      "category": "single_fact",
+      "question": "Who founded DeepMind, and in what year and city?",
+      "reference": "Demis Hassabis, Shane Legg, and Mustafa Suleyman co-founded DeepMind in London in 2010.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "DeepMind was founded in 2010 by Demis Hassabis, Tim Lillicrap, and Shane Legg in London, UK. At the time of its founding, the company was called \"Deep Mind Technologies Limited\".",
+          "prompt_tokens": 22,
+          "completion_tokens": 46,
+          "latency_ms": 638.5239000082947,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 1,
+          "total_tokens": 68,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, addressing the question of who founded DeepMind, in what year, and in what city, with the additional detail about the company's original name."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "DeepMind was founded in 2010 in London by Demis Hassabis, Shane Legg, and Mustafa Suleyman.",
+          "prompt_tokens": 1567,
+          "completion_tokens": 27,
+          "latency_ms": 9281.889599980786,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "DeepMind\nHassabis is the CEO and co-founder of DeepMind, a machine learning AI startup, founded in London in 2010 with Shane Legg and Mustafa Suleyman. Hassabis met Legg when both were postdocs at the Gatsby Computational Neuroscience Unit, and he and Suleyman had been friends through family. Hassabis also recruited his university friend and Elixir partner David Silver.\nDeepMind's mission is to \"solve intelligence\" and then use intelligence \"to solve everything else\". More concretely, DeepMind aims to combine insights from systems neuroscience with new developments in machine learning and computing hardware to unlock increasingly powerful general-purpose learning algorithms that will work towards the creation of an artificial general intelligence (AGI). The company has focused on training learning algorithms to master games, and in December 2013 it announced that it had made a pioneering breakthrough by training an algorithm called a Deep Q-Network (DQN) to play Atari games at a superhuman level by using only the raw pixels on the screen as inputs.\nDeepMind's early investors included several high-profile tech entrepreneurs. In 2014, Google purchased DeepMind for \u00a3400 million. Although most of the company has remained an independent entity based in London, DeepMind Health has since been directly incorporated into Google Health.\nSince the Google acquisition, the company has notched up a number of significant achievements, perhaps the most notable being the creation of AlphaGo, a program that defeated world champion Lee Sedol at the complex game of Go. Go had been considered a holy grail of AI, for its high number of possible board positions and resistance to existing programming techniques. However, AlphaGo beat European champion Fan Hui 5\u20130 in October 2015 before winning 4\u20131 against former world champion Lee Sedol in March 2016 and winning 3\u20130 against the world's top-ranked player Ke Jie in 2017. Additional DeepMind accomplishments include creating a neural Turing machine, reducing the energy used by the cooling systems in Google's data centres by 40%, and advancing research on AI safety.\nDeepMind has also been responsible for technical advances in machine learning, having produced a number of award-winning papers. In particular, the company has made significant advances in deep learning and reinforcement learning, and pioneered the field of deep reinforcement learning which combines these two methods. Hassabis has predicted that artificial intelligence will be \"one of the most beneficial technologies of mankind ever\" but that significant ethical issues remain.\nHassabis has also warned of the potential dangers and risks of AI if misused, and has been a strong advocate of further AI safety research being needed. In 2023, he signed the statement that \"Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war\". He considers however that a pause on AI progress would be very hard to enforce worldwide, and that the potential benefits (e.g. for health and against climate change) make it worth continuing. He said that there is an urgent need for research on evaluation tests that measure how capable and controllable new AI models are.",
+              "source": "demis_hassabis.txt",
+              "score": 0.7003297029754693,
+              "metadata": {
+                "chunk_index": 6,
+                "document_id": 2815
+              }
+            },
+            {
+              "text": "Products and technologies\nAs of 2020, DeepMind has published over a thousand papers, including thirteen papers that were accepted by Nature or Science. DeepMind received media attention during the AlphaGo period; according to a LexisNexis search, 1842 published news stories mentioned DeepMind in 2016, declining to 1363 in 2019.",
+              "source": "alphacode.txt",
+              "score": 0.6632544757607642,
+              "metadata": {
+                "chunk_index": 3,
+                "document_id": 922
+              }
+            },
+            {
+              "text": "Products and technologies\nAs of 2020, DeepMind has published over a thousand papers, including thirteen papers that were accepted by Nature or Science. DeepMind received media attention during the AlphaGo period; according to a LexisNexis search, 1842 published news stories mentioned DeepMind in 2016, declining to 1363 in 2019.",
+              "source": "deepmind.txt",
+              "score": 0.6632544757607642,
+              "metadata": {
+                "chunk_index": 3,
+                "document_id": 2754
+              }
+            },
+            {
+              "text": "Artificial general intelligence research\nIn the early 2000s, several researchers became concerned that mainstream AI was too focused on \"measurable performance in specific applications\" (known as \"narrow AI\") and had abandoned AI's original goal of creating versatile, fully intelligent machines. An early critic was Nils Nilsson in 1995, and similar opinions were published by AI elder statesmen John McCarthy, Marvin Minsky, and Patrick Winston in 2007\u20132009. Minsky organized a symposium on \"human-level AI\" in 2004. Ben Goertzel adopted the term \"artificial general intelligence\" for the new sub-field, founding a journal and holding conferences beginning in 2008. The new field grew rapidly, buoyed by the continuing success of artificial neural networks and the hope that it was the key to AGI.\nSeveral competing companies, laboratories and foundations were founded to develop AGI in the 2010s. DeepMind was founded in 2010 by three English scientists, Demis Hassabis, Shane Legg and Mustafa Suleyman, with funding from Peter Thiel and later Elon Musk. The founders and financiers were deeply concerned about AI safety and the existential risk of AI. DeepMind's founders had a personal connection with Yudkowsky, and Musk was among those who were actively raising the alarm. Hassabis was both worried about the dangers of AGI and optimistic about its power; he hoped they could \"solve AI, then solve everything else.\" The New York Times wrote in 2023, \"At the heart of this competition is a brain-stretching paradox. The people who say they are most worried about AI are among the most determined to create it and enjoy its riches. They have justified their ambition with their strong belief that they alone can keep AI from endangering Earth.\"\nIn 2012, Geoffrey Hinton (who had been leading neural network research since the 80s) was approached by Baidu, which wanted to hire him and all his students for an enormous sum. Hinton decided to hold an auction and, at a Lake Tahoe AI conference, they sold themselves to Google for a price of $44 million. Hassabis took notice and sold DeepMind to Google in 2014, on the condition that it would not accept military contracts and would be overseen by an ethics board.",
+              "source": "history_of_artificial_intelligence.txt",
+              "score": 0.6295444157745882,
+              "metadata": {
+                "chunk_index": 48,
+                "document_id": 4367
+              }
+            },
+            {
+              "text": "In September 2015, DeepMind and the Royal Free NHS Trust signed their initial information sharing agreement to co-develop a clinical task management app, Streams.\nAfter Google's acquisition the company established an artificial intelligence ethics board. The ethics board for AI research remains a mystery, with both Google and DeepMind declining to reveal who sits on the board. DeepMind has opened a new unit called DeepMind Ethics and Society and focused on the ethical and societal questions raised by artificial intelligence featuring prominent philosopher Nick Bostrom as advisor. In October 2017, DeepMind launched a new research team to investigate AI ethics.\nIn December 2019, co-founder Suleyman announced he would be leaving DeepMind to join Google, working in a policy role.\nIn April 2023, DeepMind merged with Google AI's Google Brain division to form Google DeepMind, as part of the company's continued efforts to accelerate work on AI in response to OpenAI's ChatGPT. This marked the end of a years-long struggle from DeepMind executives to secure greater autonomy from Google.",
+              "source": "alphacode.txt",
+              "score": 0.6148607538980663,
+              "metadata": {
+                "chunk_index": 2,
+                "document_id": 921
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 1,
+          "total_tokens": 1594,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference and addresses the question."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "DeepMind was founded by Demis Hassabis, Shane Legg, and Mustafa Suleyman in 2010 in London.",
+          "prompt_tokens": 8714,
+          "completion_tokens": 2740,
+          "latency_ms": 8215.952200000174,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"alphafold_chunk_2\": [\n    \"AlphaFold 3 was announced on 8 May 2024. It can predict the structure of complexes created by proteins with DNA, RNA, various ligands, and ions. The new prediction method shows a minimum 50% improvement in accuracy for protein interactions with other molecules compared to existing methods.\\nDemis Hassabis and John Jumper shared one half of the 2024 Nobel Prize in Chemistry, awarded \\\"for protein structure prediction,\\\" while the other half went to David Baker \\\"for computational protein design.\\\" Hassabis and Jumper had previously won the Breakthrough Prize in Life Sciences and the Albert Lasker Award for Basic Medical Research in 2023 for their leadership of the AlphaFold project.\"\n  ],\n  \"evolutionary_algorithm_chunk_11\": [\n    \"Gallery\\nReferences\\nBibliography\\nAshlock, D. (2006), Evolutionary Computation for Modeling and Optimization, Springer, New York, doi:10.1007/0-387-31909-3  ISBN 0-387-22196-4.\\nB\\u00e4ck, T. (1996), Evolutionary Algorithms in Theory and Practice: Evolution Strategies, Evolutionary Programming, Genetic Algorithms, Oxford Univ. Press, New York, ISBN 978-0-19-509971-3.\\nB\\u00e4ck, T., Fogel, D., Michalewicz, Z. (1999), Evolutionary Computation 1: Basic Algorithms and Operators, CRC Press, Boca Raton, USA, ISBN 978-0-7503-0664-5.\\nB\\u00e4ck, T., Fogel, D., Michalewicz, Z. (2000), Evolutionary Computation 2: Advanced Algorithms and Operators, CRC Press, Boca Raton, USA, doi:10.1201/9781420034349 ISBN 978-0-3678-0637-8.\\nBanzhaf, W., Nordin, P., Keller, R., Francone, F. (1998), Genetic Programming - An Introduction, Morgan Kaufmann, San Francisco, ISBN 978-1-55860-510-7.\\nEiben, A.E., Smith, J.E. (2003), Introduction to Evolutionary Computing, Springer, Heidelberg, New York, doi:10.1007/978-3-662-44874-8 ISBN 978-3-662-44873-1.\\nHolland, J. H. (1992), Adaptation in Natural and Artificial Systems, MIT Press, Cambridge, MA, ISBN 978-0-262-08213-6.\\nMichalewicz, Z.; Fogel, D.B. (2004), How To Solve It: Modern Heuristics. Springer, Berlin, Heidelberg, ISBN 978-3-642-06134-9, doi:10.1007/978-3-662-07807-5.\\nBenko, Attila; Dosa, Gyorgy; Tuza, Zsolt (2010). \\\"Bin Packing/Covering with Delivery, solved with the evolution of algorithms\\\". 2010 IEEE Fifth International Conference on Bio-Inspired Computing: Theories and Applications (BIC-TA). pp. 298\\u2013302. doi:10.1109/BICTA.2010.5645312. ISBN 978-1-4244-6437-1. S2CID 16875144.\\nPrice, K., Storn, R.M., Lampinen, J.A., (2005). Differential Evolution: A Practical Approach to Global Optimization, Springer, Berlin, Heidelberg, ISBN 978-3-642-42416-8, doi:10.1007/3-540-31306-0.\\nIngo Rechenberg (1971), Evolutionsstrategie - Optimierung technischer Systeme nach Prinzipien der biologischen Evolution (PhD thesis). Reprinted by Fromman-Holzboog (1973). ISBN 3-7728-1642-8\"\n  ],\n  \"alphafold_chunk_3\": [\n    \"Background\\nProteins consist of chains of amino acids which spontaneously fold to form the three dimensional (3-D) structures of the proteins. The 3-D structure is crucial to understanding the biological function of the protein.\\nProtein structures can be determined experimentally through techniques such as X-ray crystallography, cryo-electron microscopy and nuclear magnetic resonance (NMR), which are all expensive and time-consuming. Such efforts, using the experimental methods, have identified the structures of about 170,000 proteins over the last 60 years, while there are over 200 million known proteins across all life forms.\\nOver the years, researchers have applied numerous computational methods to predict the 3D structures of proteins from their amino acid sequences, accuracy of such methods in best possible scenario is close to experimental techniques (NMR) by the use of homology modeling based on molecular evolution. CASP, which was launched in 1994 to challenge the scientific community to produce their best protein structure predictions, found that GDT scores of only about 40 out of 100 can be achieved for the most difficult pro",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 14,
+          "total_tokens": 11454,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference and addresses the question."
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "single_fact",
+      "question": "What was AlexNet and who built it?",
+      "reference": "AlexNet was a convolutional neural network that won the 2012 ImageNet Large Scale Visual Recognition Challenge by a wide margin. It was built by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton at the University of Toronto.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "AlexNet was a deep convolutional neural network (CNN) architecture that won the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) in 2012. It was designed by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton.\n\nAlexNet's architecture consisted of five convolutional layers and three fully connected layers. The network was trained on the ImageNet dataset, which contains over 1.2 million images from 1000 classes. The network achieved a top-5 error rate of 15.3%, which was significantly better than the second-best entry, which had an error rate of 26.2%.\n\nThe key innovations of AlexNet were:\n\n1. **ReLU activation function**: AlexNet used the Rectified Linear Unit (ReLU) activation function, which was a departure from the traditional sigmoid or tanh activation functions. ReLU is faster to compute and helps to avoid the vanishing gradient problem.\n2. **Dropout regularization**: AlexNet used dropout regularization to prevent overfitting. Dropout randomly sets a fraction of the neurons to zero during training, which helps to prevent the network from relying too heavily on any individual neuron.\n3. **Local response normalization (LRN)**: AlexNet used LRN to normalize the output of each neuron. This helps to reduce overfitting and improve the network's ability to generalize.\n\nThe success of AlexNet marked a significant turning point in the development of deep learning. It showed that deep neural networks could be trained to achieve state-of-the-art performance on large-scale image recognition tasks, and it paved the way for the development of more advanced CNN architectures.\n\nThe original paper that introduced AlexNet is:\n\nKrizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. In Advances in Neural Information Processing Systems (NIPS) (pp. 1097-1105).",
+          "prompt_tokens": 19,
+          "completion_tokens": 395,
+          "latency_ms": 1132.5083000119776,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 1,
+          "total_tokens": 414,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference and addresses the question, including the key details about AlexNet's architecture and innovations."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "AlexNet was a powerful visual-recognition network developed by Alex Krizhevsky, Ilya Sutskever, and their PhD advisor Geoffrey Hinton, at the University of Toronto, in 2012. It was a deep neural network that won the ImageNet challenge in 2012 and revolutionized research in neural networks by demonstrating the effectiveness of deep neural networks trained on GPUs.",
+          "prompt_tokens": 996,
+          "completion_tokens": 80,
+          "latency_ms": 8855.09769996861,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "Title: Alex Krizhevsky\nCategory: researchers\nSource: Wikipedia\n\nAlex Krizhevsky is a Canadian computer scientist most noted for his work on artificial neural networks and deep learning. In 2012, Krizhevsky, Ilya Sutskever and their PhD advisor Geoffrey Hinton, at the University of Toronto, developed a powerful visual-recognition network AlexNet using only two GeForce-branded GPU cards. This revolutionized research in neural networks. Previously neural networks were trained on CPUs. The transition to GPUs opened the way to the development of advanced AI models.",
+              "source": "alex_krizhevsky.txt",
+              "score": 0.5650496115606186,
+              "metadata": {
+                "chunk_index": 0,
+                "document_id": 836
+              }
+            },
+            {
+              "text": "AlexNet\nMotivated by Sutskever and inspired by Hinton, Krizhevsky developed AlexNet to expand the limits in image recognition and classification. Building on Convolutional Neural Networks and Sutskever\u2019s Deep Neural Network approach of deepening the neural layers far beyond the convention of the time\u2014as well as adding Dropout for training resilience\u2014AlexNet won the ImageNet challenge in 2012. The team presented their paper for AlexNet at NeurIPS (NIPS) 2012.\nShortly after AlexNet\u2019s debut, Krizhevsky and Sutskever sold their startup, DNN Research Inc., to Google. Krizhevsky left Google in September 2017 after losing interest in the work, to work at the company Dessa in support of new deep-learning techniques. Many of his numerous papers on machine learning and computer vision are frequently cited by other researchers. He is also the main author of the CIFAR-10 and CIFAR-100 datasets.",
+              "source": "alex_krizhevsky.txt",
+              "score": 0.5314781980576845,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 837
+              }
+            },
+            {
+              "text": "Legacy\nAlexNet is widely credited with igniting the deep learning revolution. Its success demonstrated the effectiveness of deep neural networks trained on GPUs, leading to rapid progress across multiple domains of artificial intelligence beyond computer vision. The techniques and momentum generated by AlexNet helped shape the development of modern natural language processing models, including large-scale transformer-based models such as BERT and GPT, which power tools like ChatGPT.\n\nReferences\nExternal links\nAlex Krizhevsky's home page",
+              "source": "alex_krizhevsky.txt",
+              "score": 0.505150272371263,
+              "metadata": {
+                "chunk_index": 2,
+                "document_id": 838
+              }
+            },
+            {
+              "text": "Architecture\nAlexNet contains eight layers: the first five are convolutional layers, some of them followed by max-pooling layers, and the last three are fully connected layers. The network, except the last layer, is split into two copies, each run on one GPU, because the network did not fit the VRAM of a single Nvidia GTX 580 3GB GPU. The entire structure can be written as(CONV \u2192 RN \u2192 MP)2 \u2192 (CONV3 \u2192 MP) \u2192 (FC \u2192 DO)2 \u2192 Linear \u2192 softmaxwhere\nCONV = convolutional layer (with ReLU activation)\nRN = local response normalization\nMP = max-pooling\nFC = fully connected layer (with ReLU activation)\nLinear = fully connected layer (without activation)\nDO = dropout\nNotably, the convolutional layers 3, 4, 5 were connected to one another without any pooling or normalization. It used the non-saturating ReLU activation function, which trained better than tanh and sigmoid.",
+              "source": "alexnet.txt",
+              "score": 0.48876331981344284,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 840
+              }
+            },
+            {
+              "text": "Subsequent work\nAlexNet is highly influential, resulting in much subsequent work in using CNNs for computer vision and using GPUs to accelerate deep learning. As of early 2025, the AlexNet paper has been cited over 184,000 times according to Google Scholar.\nAt the time of publication, there was no framework available for GPU-based neural network training and inference. The codebase for AlexNet was released under a BSD license, and had been commonly used in neural network research for several subsequent years.\nIn one direction, subsequent works aimed to train increasingly deep CNNs that achieve increasingly higher performance on ImageNet. In this line of research are GoogLeNet (2014), VGGNet (2014), Highway network (2015), and ResNet (2015). Another direction aimed to reproduce the performance of AlexNet at a lower cost. In this line of research are SqueezeNet (2016), MobileNet (2017), EfficientNet (2019).\nGeoffrey Hinton, Ilya Sutskever, and Alex Krizhevsky formed DNNResearch soon afterwards and sold the company, and the AlexNet source code along with it, to Google. There had been improvements and reimplementations for the AlexNet, but the original version as of 2012, at the time of its winning of ImageNet, had been released under BSD-2 license via Computer History Museum.",
+              "source": "alexnet.txt",
+              "score": 0.470352024477066,
+              "metadata": {
+                "chunk_index": 7,
+                "document_id": 846
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 1,
+          "total_tokens": 1076,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, addressing the question and including the key details about AlexNet's creators and achievements."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "### AlexNet and Its Creators\n\nAlexNet is a deep convolutional neural network designed for image classification tasks. It was created by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton. The network was introduced in 2012 and achieved state-of-the-art results in the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) that year, winning the competition.\n\nAlexNet is considered a significant milestone in the development of deep learning and computer vision. It was a key model that popularized the use of deep convolutional neural networks for image classification and other tasks.",
+          "prompt_tokens": 8475,
+          "completion_tokens": 2724,
+          "latency_ms": 7916.622899996582,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"multilayer_perceptron_chunk_0\": [\n    \"Title: Multilayer perceptron\\nCategory: architectures_extended\\nSource: Wikipedia\\n\\nIn deep learning, a multilayer perceptron (MLP) is a kind of modern feedforward neural network consisting of fully connected neurons with nonlinear activation functions, organized in layers, notable for being able to distinguish data that is not linearly separable.\\nModern neural networks are trained using backpropagation and are colloquially referred to as \\\"vanilla\\\" networks. MLPs grew out of an effort to improve on single-layer perceptrons, which could only be applied to linearly separable data. A perceptron traditionally used a Heaviside step function as its nonlinear activation function. However, the backpropagation algorithm requires that modern MLPs use continuous activation functions such as sigmoid or ReLU.\\nMultilayer perceptrons form the basis of deep learning, and are applicable across a vast set of diverse domains.\"\n  ],\n  \"computer_vision_chunk_15\": [\n    \"Support of visual effects creation for cinema and broadcast, e.g., camera tracking (match moving).\\nSurveillance.\\nDriver drowsiness detection\\nTracking and counting organisms in the biological sciences (for example in leaf counting for food crops).\\n\\nTypical tasks\\nEach of the application areas described above employ a range of computer vision tasks; more or less well-defined measurement problems or processing problems, which can be solved using a variety of methods. Some examples of typical computer vision tasks are presented below.\\nComputer vision tasks include methods for acquiring, processing, analyzing and understanding digital images, and extraction of high-dimensional data from the real world in order to produce numerical or symbolic information, e.g., in the forms of decisions. Understanding in this context means the transformation of visual images into descriptions of the world that can interface with other thought processes and elicit appropriate action. This image understanding can be seen as the disentangling of symbolic information from image data using models constructed with the aid of geometry, physics, statistics, and learning theory.\\n\\nRecognition\\nThe classical problem in computer vision, image processing, and machine vision is that of determining whether or not the image data contains some specific object, feature, or activity. Different varieties of recognition problem are described in the literature.\"\n  ],\n  \"connectionism_chunk_5\": [\n    \"The first wave\\nThe first wave begun in 1943 with Warren Sturgis McCulloch and Walter Pitts both focusing on comprehending neural circuitry through a formal and mathematical approach.  McCulloch and Pitts showed how neural systems could implement first-order logic: Their classic paper \\\"A Logical Calculus of Ideas Immanent in Nervous Activity\\\" (1943) is important in this development here. They were influenced by the work of Nicolas Rashevsky in the 1930s and symbolic logic in the style of Principia Mathematica.\\nHebb contributed greatly to speculations about neural functioning, and proposed a learning principle, Hebbian learning. Lashley argued for distributed representations as a result of his failure to find anything like a localized engram in years of lesion experiments. Friedrich Hayek independently conceived the model, first in a brief unpublished manuscript in 1920, then expanded into a book in 1952.\\nThe Perceptron machines were proposed and built by Frank Rosenblatt, who published the 1958 paper \\u201cThe Perceptron: A Probabilistic Model For Information Storage and Organization in the Brain\\u201d in Psychological Review, while working at the Cornell Aeronautical Laboratory. He cited Hebb, Hayek, Uttley, and Ashby as main influences.\\nAnother form of connectionist model was the relational network framework developed by the linguist Sydney Lamb in the 1960s.\\nThe research group led by Widrow empirically searched for methods to train two-layered ADALINE networks (MA",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 14,
+          "total_tokens": 11199,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction accurately describes AlexNet and its creators, and addresses the question, although it provides additional context beyond the reference."
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "single_fact",
+      "question": "What architecture was introduced in the paper 'Attention Is All You Need', and which lab published it?",
+      "reference": "The Transformer architecture was introduced in the 2017 paper 'Attention Is All You Need' by Ashish Vaswani and colleagues at Google Brain.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "The paper 'Attention Is All You Need' introduced the Transformer architecture. It was published in 2017 by the Google Brain team, specifically by Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, \u0141ukasz Kaiser, and Illia Polosukhin. The Transformer architecture revolutionized the field of natural language processing (NLP) by replacing traditional recurrent neural network (RNN) and convolutional neural network (CNN) architectures with a novel attention-based approach.",
+          "prompt_tokens": 30,
+          "completion_tokens": 113,
+          "latency_ms": 463.7968999450095,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 1,
+          "total_tokens": 143,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference and addresses the question, including the key details about the paper, authors, and publication year."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "The architecture introduced in the paper \"Attention Is All You Need\" is the Transformer architecture, specifically the original (100M-parameter) encoder\u2013decoder transformer model. The paper was published on 2017-06-12, but the context does not specify the lab that published it. It does mention, however, that the \"reference implementation\" of the original Transformer was written in a TensorFlow library, but the lab associated with the publication of the paper is not explicitly mentioned.",
+          "prompt_tokens": 834,
+          "completion_tokens": 97,
+          "latency_ms": 10323.037500027567,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "In 2016, decomposable attention applied a self-attention mechanism to feedforward networks, which are easy to parallelize, and achieved SOTA result in textual entailment with an order of magnitude fewer parameters than LSTMs One of its authors, Jakob Uszkoreit, suspected that attention without recurrence would be sufficient for language translation, thus the title \"attention is all you need\" That hypothesis was against conventional wisdom at the time, and even his father Hans Uszkoreit, a well-known computational linguist, was skeptical In the same year, self-attention (called intra-attention or intra-sentence attention) was proposed for LSTMs On 2017-06-12, the original (100M-parameter) encoder\u2013decoder transformer model was published in the \"Attention is all you need\" paper",
+              "source": "transformer_deep_learning_architecture.txt",
+              "score": 0.47030659004870523,
+              "metadata": {
+                "chunk_index": 8,
+                "document_id": 8819
+              }
+            },
+            {
+              "text": "Four days after the publication of \"Attention is All You Need\", a multimodal transformer architecture, MultiModel, was published by most authors of that paper Four days after the publication of \"Attention is All You Need\", a multimodal transformer architecture, MultiModel, was published by most authors of that paper Other examples include the vision transformer, speech recognition, robotics, and multimodal The vision transformer, in turn, stimulated new developments in convolutional neural networks Image and video generators like DALL-E (2021), Stable Diffusion 3 (2024), and Sora (2024), use transformers to analyse input data (like text prompts) by breaking it down into \"tokens\" and then calculating the relevance between each token using self-attention, which helps the model understand the context and relationships within the data Training\nMethods for stabilizing training\nThe plain transformer architecture had difficulty in converging",
+              "source": "transformer_deep_learning_architecture.txt",
+              "score": 0.458760174036115,
+              "metadata": {
+                "chunk_index": 11,
+                "document_id": 8822
+              }
+            },
+            {
+              "text": "At the time, the focus of the research was on improving seq2seq for machine translation, by removing its recurrence to process all tokens in parallel, but preserving its dot-product attention mechanism to keep its text processing performance This led to the introduction of a multi-head attention model that was easier to parallelize due to the use of independent heads and the lack of recurrence Its parallelizability was an important factor to its widespread use in large neural networks AI boom era\nAs early as spring 2017, even before the \"Attention is all you need\" preprint was published, one of the co-authors applied the \"decoder-only\" variation of the architecture to generate fictitious Wikipedia articles Transformer architecture is now used alongside many generative models that contribute to the ongoing AI boom The \"reference implementation\" of the original Transformer was written in a TensorFlow library",
+              "source": "transformer_deep_learning_architecture.txt",
+              "score": 0.44319629201233357,
+              "metadata": {
+                "chunk_index": 9,
+                "document_id": 8820
+              }
+            },
+            {
+              "text": "History\nThe project was the brainchild of Marvin Minsky, Push Singh, Catherine Havasi, and others. Development work began in September 1999, and the project opened to the Internet a year later. Havasi described it in her dissertation as \"an attempt to ... harness some of the distributed human computing power of the Internet, an idea which was then only in its early stages.\" The original OMCS was influenced by the website Everything2 and its predecessor, and presents a minimalist interface that is inspired by Google.\nPush Singh would have become a professor at the MIT Media Lab and lead the Common Sense Computing group in 2007, but committed suicide on February 28, 2006.\nThe project is currently run by the Digital Intuition Group at the MIT Media Lab under Catherine Havasi.",
+              "source": "conceptnet.txt",
+              "score": 0.43470272116711267,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 2272
+              }
+            },
+            {
+              "text": "The small model aims to fool the large model The small model aims to fool the large model DeBERTa (2020) is a significant architectural variant, with disentangled attention Its key idea is to treat the positional and token encodings separately throughout the attention mechanism",
+              "source": "bert_language_model.txt",
+              "score": 0.4345571816028731,
+              "metadata": {
+                "chunk_index": 18,
+                "document_id": 1685
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 1,
+          "total_tokens": 931,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, but omits the key fact about the lab associated with the publication of the paper."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "## Introduction\nThe paper 'Attention Is All You Need' introduced a revolutionary architecture in the field of natural language processing.\n\n## Architecture and Publication\nThe architecture introduced in the paper 'Attention Is All You Need' is the **Transformer architecture**. This paper was published by the **Google Brain team** in 2017.\n\n## Details\nThe Transformer architecture was a significant departure from traditional sequence-to-sequence models, relying entirely on self-attention mechanisms to process input sequences. This innovation has had a profound impact on the development of various NLP tasks and models.\n\n## References\nNo specific image references are provided in the contexts.",
+          "prompt_tokens": 6970,
+          "completion_tokens": 2272,
+          "latency_ms": 12817.406399990432,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"google_brain_chunk_5\": [\n    \"Robotics\\nAiming to improve traditional robotics control algorithms where new skills of a robot need to be hand-programmed, robotics researchers at Google Brain are developing machine learning techniques to allow robots to learn new skills on their own. They also attempt to develop ways for information sharing between robots so that robots can learn from each other during their learning process, also known as cloud robotics. As a result, Google has launched the Google Cloud Robotics Platform for developers in 2019, an effort to combine robotics, AI, and the cloud to enable efficient robotic automation through cloud-connected collaborative robots.\\nRobotics research at Google Brain has focused mostly on improving and applying deep learning algorithms to enable robots to complete tasks by learning from experience, simulation, human demonstrations, and/or visual representations. For example, Google Brain researchers showed that robots can learn to pick and throw rigid objects into selected boxes by experimenting in an environment without being pre-programmed to do so. In another research, researchers trained robots to learn behaviors such as pouring liquid from a cup; robots learned from videos of human demonstrations recorded from multiple viewpoints.\\nGoogle Brain researchers have collaborated with other companies and academic institutions on robotics research. In 2016, the Google Brain Team collaborated with researchers at X in a research on learning hand-eye coordination for robotic grasping. Their method allowed real-time robot control for grasping novel objects with self-correction. In 2020, researchers from Google Brain, Intel AI Lab, and UC Berkeley created an AI model for robots to learn surgery-related tasks such as suturing from training with surgery videos.\"\n  ],\n  \"recurrent_neural_network_chunk_2\": [\n    \"Similar networks were published by Kaoru Nakano in 1971,Shun'ichi Amari in 1972, and William A. Little in 1974, who was acknowledged by Hopfield in his 1982 paper.\\nAnother origin of RNN was statistical mechanics. The Ising model was developed by Wilhelm Lenz and Ernst Ising in the 1920s as a simple statistical mechanical model of magnets at equilibrium. Glauber in 1963 studied the Ising model evolving in time, as a process towards equilibrium (Glauber dynamics), adding in the component of time.\\nThe Sherrington\\u2013Kirkpatrick model of spin glass, published in 1975, is the Hopfield network with random initialization. Sherrington and Kirkpatrick found that it is highly likely for the energy function of the SK model to have many local minima. In the 1982 paper, Hopfield applied this recently developed theory to study the Hopfield network with binary activation functions. In a 1984 paper he extended this to continuous activation functions. It became a standard model for the study of neural networks through statistical mechanics.\"\n  ],\n  \"t5_language_model_chunk_0\": [\n    \"Title: T5 (language model)\\nCategory: methods_extended\\nSource: Wikipedia\\n\\nT5 (Text-to-Text Transfer Transformer) is a series of large language models developed by Google AI introduced in 2019. Like the original Transformer model, T5 models are encoder-decoder Transformers, where the encoder processes the input text, and the decoder generates the output text.\\nT5 models are usually pretrained on a massive dataset of text and code, after which they can perform the text-based tasks that are similar to their pretrained tasks. They can also be finetuned to perform other tasks.\\nT5 models have been employed in various applications, including chatbots, machine translation systems, text summarization tools, code generation, and robotics.\\n\\nTraining\\nThe original T5 models are pre-trained on the Colossal Clean Crawled Corpus (C4), containing text and code scraped from the internet. This pre-training process enables the models to learn general language understanding and generation abilities. T5 models can then be fine-t",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 11,
+          "total_tokens": 9242,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction accurately addresses the question, mentioning the Transformer architecture and its publication by the Google Brain team in the paper 'Attention Is All You Need'."
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "single_fact",
+      "question": "Who founded Anthropic and when?",
+      "reference": "Anthropic was founded in 2021 by Dario Amodei, Daniela Amodei, and other former OpenAI researchers, in San Francisco.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "Anthropic was founded in 2021 by Dario Amodei and Jack Clark. Dario Amodei was previously a researcher at Google's DeepMind, and Jack Clark was the director of strategy at Google's DeepMind.",
+          "prompt_tokens": 17,
+          "completion_tokens": 49,
+          "latency_ms": 436.2743999809027,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 1,
+          "total_tokens": 66,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, but omits the names of some co-founders."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "Anthropic was founded in 2021 by seven former employees of OpenAI, including siblings Daniela Amodei and Dario Amodei.",
+          "prompt_tokens": 736,
+          "completion_tokens": 31,
+          "latency_ms": 14018.8063000096,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "Title: Anthropic\nCategory: labs_orgs\nSource: Wikipedia\n\nAnthropic is an American artificial intelligence (AI) company headquartered in San Francisco. It has developed a range of large language models (LLMs) named Claude and focuses on AI safety.\nAnthropic was founded in 2021 by former members of OpenAI, including siblings Daniela Amodei and Dario Amodei, who are president and CEO, respectively. The company is privately held and, as of February 2026, had an estimated value of $380 billion.\n\nHistory\n2021\u20132023\nAnthropic was founded in 2021 by seven former employees of OpenAI, including siblings Daniela Amodei and Dario Amodei, the latter of whom was OpenAI's Vice President of Research.\nAccording to the company's founders, its name reflects its existential mission to help people lead their best lives. In a July 2023 interview, company co-founder Daniela Amodei explained why the founders chose the name \"Anthropic\":",
+              "source": "anthropic.txt",
+              "score": 0.5526784468585059,
+              "metadata": {
+                "chunk_index": 0,
+                "document_id": 1050
+              }
+            },
+            {
+              "text": "One reason is that \"anthropic\" means relating to humans, and a lot of what has been important for us, as we're working on these ever more powerful generative AI tools that are interacting with the world, is wanting to make sure that humans are still at the center of that story.\nIn the summer of 2022, Anthropic finished training the first version of Claude but did not immediately release it, citing a need for further internal safety testing and a desire to avoid initiating a potentially hazardous race to develop increasingly powerful AI systems. It was released in March 2023.",
+              "source": "anthropic.txt",
+              "score": 0.48764000973480226,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 1051
+              }
+            },
+            {
+              "text": "Business structure\nAccording to Anthropic, its goal is to research AI systems' safety and reliability. The Amodei siblings were among those who left OpenAI due to directional differences. Anthropic operates as a public benefit corporation.\nAnthropic's \"Long-Term Benefit Trust\" is a purpose trust for \"the responsible development and maintenance of advanced AI for the long-term benefit of humanity\". It holds Class T shares in the PBC, which allow it to elect directors to Anthropic's board. As of January 2026, the members of the Trust are Neil Buddy Shah, Mariano-Florentino Cu\u00e9llar, and Richard Fontaine.\nIn January 2026, Anthropic introduced a division called \"Labs\", with Mike Krieger (formerly the company's Chief Product Officer) joining it.\nIn March 2026, Anthropic launched the Anthropic Institute, a think tank led by Jack Clark studying AI.",
+              "source": "anthropic.txt",
+              "score": 0.44358712216302393,
+              "metadata": {
+                "chunk_index": 3,
+                "document_id": 1053
+              }
+            },
+            {
+              "text": "Education-related projects\nIn August 2025, Anthropic launched a Higher Education Advisory Board, chaired by former Yale University president and former Coursera CEO Rick Levin.\nAnthropic partnered with Iceland's Ministry of Education and Children in 2025 to allow teachers to access Claude and integrate AI into daily teaching.",
+              "source": "anthropic.txt",
+              "score": 0.42435547032318327,
+              "metadata": {
+                "chunk_index": 9,
+                "document_id": 1059
+              }
+            },
+            {
+              "text": "History\nMidjourney, Inc. was founded in San Francisco, California, by David Holz, previously a co-founder of Leap Motion. The Midjourney image generation platform entered open beta on July 12, 2022. On March 14, 2022, the Midjourney Discord server launched with a request to post high-quality photographs to Twitter and Reddit for systems training.",
+              "source": "midjourney.txt",
+              "score": 0.3775089070905986,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 6025
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 1,
+          "total_tokens": 767,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, including the key fact of the year of founding and the names of the founders."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "Anthropic was founded in 2021 by Dario Amodei, a former OpenAI executive, and his sister, Daniela Amodei.",
+          "prompt_tokens": 4803,
+          "completion_tokens": 608,
+          "latency_ms": 12181.995299994014,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"sam_altman_chunk_10\": [\n    \"In May 2024, after OpenAI's non-disparagement agreements were exposed, Altman was accused of lying when claiming to have been unaware of the equity cancellation provision for departing employees who don't sign the agreement. Also in May, former board member Helen Toner explained the board's rationale for firing Altman in November 2023. She stated that Altman had withheld information, for example by not informing the board in advance of ChatGPT's release and by not disclosing his ownership of OpenAI's startup fund. She also alleged that two executives in OpenAI had reported \\\"psychological abuse\\\" from Altman, and provided screenshots and documentation to support their claims. She said that many employees feared retaliation if they didn't support Altman, and that when Altman was Loopt's CEO, the management team asked twice to fire him for what they called \\\"deceptive and chaotic behavior\\\".\"\n  ],\n  \"sam_altman_chunk_5\": [\n    \"Worldcoin\\nIn 2019, Altman co-founded the for-profit company Tools For Humanity with Alex Blania (CEO) and others. The company promoted the Worldcoin cryptocurrency and eye-scanning systems to provide proof of personhood and authentication. However, it has engaged in deceptive marketing practices to drive sign-ups. By 2023, Tools For Humanity had scanned two million people's eyes and raised $250 million from several investors, including Andreessen Horowitz and Sam Bankman-Fried.\\nKenya was one of the first countries to register WorldCoin. The promise of free money led to rapid growth in Kenya until WorldCoin promotion was paused by regulators. Citing legal concerns over biometric data privacy and potential fraud concerns, regulators in France, the United Kingdom, Bavaria, South Korea,  Spain, Portugal, and Hong Kong have investigated or suspended WorldCoin. WorldCoin has never been offered in the United States and the company limits its disclosures due to regulatory scrutiny.\\n\\nEnergy investments\\nAltman is chairman of the board for Helion Energy, a company focused on developing nuclear fusion. He also invested in Exowatt, a solar energy startup that aims to provide clean energy to data centers. In March 2021, Altman and investment banker Michael Klein co-founded AltC Acquisition Corp, a special-purpose acquisition company (SPAC), where he was also the CEO. In May 2024, Oklo Inc. completed a merger with the SPAC to become a public company. Altman remained as chairman of Oklo following the merger until stepping down in April 2025 to \\\"avoid conflict of interest\\\" and \\\"open up opportunities for future deals between OpenAI and Oklo.\\\"\"\n  ],\n  \"sam_altman_chunk_9\": [\n    \"Removal and reinstatement as OpenAI CEO\\nOn November 17, 2023, OpenAI's board, composed of researcher Helen Toner, Quora CEO Adam D'Angelo, AI governance advocate Tasha McCauley, and, most prominently in the firing, OpenAI co-founder and chief scientist Ilya Sutskever, announced that they had made the decision to remove Altman as CEO and Greg Brockman from the board, both of whom were co-founders. The announcement cited that Altman \\\"was not consistently candid in his communications\\\". In response, Brockman resigned from his role as President of OpenAI. According to The New Yorker, Altman returned to his home and coordinated with consultant Chris Lehane, Airbnb executive Brian Chesky, and a team of staff to implement a strategy for his reinstatement. Altman stated that his team was focused on damaging interim CEO Mira Murati's reputation. The day after Altman was removed, the board discussed bringing him back to OpenAI.\\nOn November 20, 2023, Microsoft CEO Satya Nadella announced that Altman would be joining Microsoft to lead a new advanced AI research team. Two days later, OpenAI employees published an open letter to the board threatening to leave OpenAI and join Microsoft, where all employees had been promised jobs, unless all board members step down and reinstate Altman as CEO. 505 employees initially s",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 8,
+          "total_tokens": 5411,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, although it omits the detail that there were \"other former OpenAI researchers\" involved in the founding of Anthropic."
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "multi_hop",
+      "question": "Which of the 2018 Turing Award co-recipients have worked at Google?",
+      "reference": "The 2018 Turing Award was shared by Geoffrey Hinton, Yann LeCun, and Yoshua Bengio. Of the three, Geoffrey Hinton joined Google (Google Brain) in 2013 and worked there until his 2023 resignation. LeCun has been at Meta AI, and Bengio has been at Universit\u00e9 de Montr\u00e9al / Mila.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "The 2018 Turing Award was awarded to Geoffrey Hinton, Yoshua Bengio, and Yann LeCun. \n\nYann LeCun has worked at Google (as a Research Scientist and Director of AI Research). He is currently the Silver Professor of Computer Science at New York University and Vice President, Chief AI Scientist at Facebook. \n\nGeoffrey Hinton has worked as a consultant for Google. \n\nYoshua Bengio has also worked with Google as a consultant.\n\nSo, all three 2018 Turing Award co-recipients have worked with Google in some capacity.",
+          "prompt_tokens": 26,
+          "completion_tokens": 118,
+          "latency_ms": 390.5642000027001,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 1,
+          "total_tokens": 144,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, but it only mentions Geoffrey Hinton working at Google, whereas the prediction states all three have worked with Google."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "According to the provided context, I couldn't find information about the 2018 Turing Award co-recipients. However, I can tell you that the 2024 Turing Award was given to Richard S. Sutton and Andrew Barto, and there is no information about them being co-recipients in 2018.\n\nIf you provide more context or information about the 2018 Turing Award co-recipients, I can try to help you find the answer. \n\nHowever, I can tell you that Noam Shazeer, a Google employee, was not a Turing Award recipient according to the context provided. \n\nThe context does not provide enough information to accurately answer which of the 2018 Turing Award co-recipients have worked at Google.",
+          "prompt_tokens": 1173,
+          "completion_tokens": 148,
+          "latency_ms": 16379.33259998681,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "Recipients\nSee also\nReferences\nFurther reading\nAkmut, Camille (June 12, 2018). \"Social conditions of outstanding contributions to computer science : a prosopography of Turing Award laureates (1966-2016)\". hal.science. Retrieved December 12, 2024.\n\nExternal links\n\nACM Chronological listing of Turing Laureates\nACM A.M. Turing Award Centenary Celebration\nACM A.M. Turing Award Laureate Interviews\nCelebration of 50 Years of the ACM A.M. Turing Award",
+              "source": "turing_award.txt",
+              "score": 0.6439610676333067,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 8943
+              }
+            },
+            {
+              "text": "The ACM A. M. Turing Award is an annual prize given by the Association for Computing Machinery (ACM) for contributions of lasting and major technical importance to computer science. It is generally recognized as the highest distinction in the field of computer science and is often referred to as the \"Nobel Prize of Computing\". As of 2026, 81 people have been awarded the prize, with the most recent recipients being Charles H. Bennett and Gilles Brassard, who won in 2025.\nThe award is named after Alan Turing, also referred as \"Father of Computer Science\", who was a British mathematician and reader in mathematics at the University of Manchester. Turing is often credited as being the founder of theoretical computer science and artificial intelligence, and a key contributor to the Allied cryptanalysis of the Enigma cipher during World War II. From 2007 to 2013, the award was accompanied by a prize of US$250,000, with financial support provided by Intel and Google. Since 2014, the award has been accompanied by a prize of US$1 million, with financial support provided by Google.\nThe first recipient, in 1966, was Alan Perlis. The youngest recipient was Donald Knuth, who won in 1974 at the age of 36, while the oldest recipient was Alfred Aho, who won in 2020 at the age of 79. Three women have been awarded the prize: Frances Allen (in 2006), Barbara Liskov (in 2008), and Shafi Goldwasser (in 2012).",
+              "source": "turing_award.txt",
+              "score": 0.5888518450750893,
+              "metadata": {
+                "chunk_index": 0,
+                "document_id": 8942
+              }
+            },
+            {
+              "text": "Awards and honors\nSutton has been a Fellow of the Association for the Advancement of Artificial Intelligence (AAAI) since 2001; his nomination read: \"For significant contributions to many topics in machine learning, including reinforcement learning, temporal difference techniques, and neural networks.\"  In 2003, he received the President's Award from the International Neural Network Society and in 2013, the Outstanding Achievement in Research award from the University of Massachusetts Amherst. He received the 2024 Turing Award from the Association for Computing Machinery together with Andrew Barto; the citation of the award read: \"For developing the conceptual and algorithmic foundations of reinforcement learning.\"\nIn 2016, Sutton was elected Fellow of the Royal Society of Canada. In 2021, he was elected Fellow of the Royal Society (FRS) of London.",
+              "source": "richard_s_sutton.txt",
+              "score": 0.5685311182548209,
+              "metadata": {
+                "chunk_index": 5,
+                "document_id": 7789
+              }
+            },
+            {
+              "text": "Career\nNoam Shazeer joined Google in 2000. One of his first major achievements was improving the spelling corrector of Google's search engine. In 2017, Shazeer was one of the lead authors of the seminal paper \"Attention Is All You Need\", which introduced the transformer architecture.\nAt Google, Shazeer and his colleague Daniel de Freitas built a chatbot named Meena. Following the refusal of Google to release the chatbot to the public, Shazeer and Freitas left the company in 2021 to found Character.AI.\nIn 2023 Time magazine chose Shazeer as one of the 100 most influential people in the AI world.\nIn August 2024, it was reported that Shazeer would be returning to Google to co-lead the Gemini AI project. Shazeer was appointed as technical lead on Gemini, along with Jeff Dean and Oriol Vinyals. It was part of a $2.7 billion deal for Google to license Character's technology. Since he owns 30-40% of the company, it is estimated he netted $750 million-$1 billion. In 2026, he was elected a member of the National Academy of Engineering.",
+              "source": "noam_shazeer.txt",
+              "score": 0.5370635004306777,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 6508
+              }
+            },
+            {
+              "text": "History\nThe Google Brain project began in 2011 as a part-time research collaboration between Google fellow Jeff Dean and Google Researcher Greg Corrado. Google Brain started as a Google X project and became so successful that it was graduated back to Google: Astro Teller has said that Google Brain paid for the entire cost of Google X.\nIn June 2012, the The New York Times reported that a cluster of 16,000 processors in 1,000 computers dedicated to mimicking some aspects of human brain activity had successfully trained itself to recognize a cat based on 10 million digital images taken from YouTube videos. The story was also covered by National Public Radio (NPR).\nIn March 2013, Google hired Geoffrey Hinton, a leading researcher in the deep learning field, and acquired the company DNNResearch Inc. headed by Hinton. Hinton said that he would be dividing his future time between his university research and his work at Google.\nIn April 2023, Google Brain merged with Google sister company DeepMind to form Google DeepMind, as part of the company's continued efforts to accelerate work on AI.",
+              "source": "google_brain.txt",
+              "score": 0.5346603105125306,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 4002
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "internal_llm_calls": 1,
+          "total_tokens": 1321,
+          "grading": {
+            "judge_pass": false,
+            "judge_reason": "The prediction contradicts the reference by stating that the context does not provide enough information to answer the question, when in fact the reference provides the names of the 2018 Turing Award co-recipients."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "latency_ms": 0.0,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "",
+          "error": "Server error '500 Internal Server Error' for url 'http://localhost:8800/Nilanshgraph/graphrag/answerquestion'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500",
+          "internal_llm_calls": 1,
+          "total_tokens": 0,
+          "grading": {
+            "skipped": "pipeline error"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1129 @@
+{
+  "summary": {
+    "llm_only": {
+      "n_questions": 10,
+      "n_errors": 0,
+      "judge_pass_rate": 0.8,
+      "judge_n": 10,
+      "bertscore_f1_raw_mean": null,
+      "bertscore_f1_rescaled_mean": null,
+      "mean_total_tokens": 228.0,
+      "mean_latency_ms": 650.7864100218285,
+      "mean_cost_usd": 0.0
+    },
+    "basic_rag": {
+      "n_questions": 10,
+      "n_errors": 0,
+      "judge_pass_rate": 0.6,
+      "judge_n": 10,
+      "bertscore_f1_raw_mean": null,
+      "bertscore_f1_rescaled_mean": null,
+      "mean_total_tokens": 1270.7,
+      "mean_latency_ms": 11813.34910999285,
+      "mean_cost_usd": 0.0
+    },
+    "graph_rag": {
+      "n_questions": 10,
+      "n_errors": 0,
+      "judge_pass_rate": 0.8,
+      "judge_n": 10,
+      "bertscore_f1_raw_mean": null,
+      "bertscore_f1_rescaled_mean": null,
+      "mean_total_tokens": 1043.7,
+      "mean_latency_ms": 16387.86646000226,
+      "mean_cost_usd": 0.0
+    }
+  },
+  "results": [
+    {
+      "id": 1,
+      "category": "single_fact",
+      "question": "Who founded DeepMind, and in what year and city?",
+      "reference": "Demis Hassabis, Shane Legg, and Mustafa Suleyman co-founded DeepMind in London in 2010.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "DeepMind was founded by Demis Hassabis, Shane Legg, and Anthony St. John in 2010 in London, United Kingdom.",
+          "prompt_tokens": 22,
+          "completion_tokens": 30,
+          "latency_ms": 299.6057000127621,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 52,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, although it includes an incorrect co-founder (Anthony St. John instead of Mustafa Suleyman)."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "DeepMind was founded in 2010 in London by Demis Hassabis, Shane Legg, and Mustafa Suleyman.",
+          "prompt_tokens": 1567,
+          "completion_tokens": 27,
+          "latency_ms": 8509.439699992072,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "DeepMind\nHassabis is the CEO and co-founder of DeepMind, a machine learning AI startup, founded in London in 2010 with Shane Legg and Mustafa Suleyman. Hassabis met Legg when both were postdocs at the Gatsby Computational Neuroscience Unit, and he and Suleyman had been friends through family. Hassabis also recruited his university friend and Elixir partner David Silver.\nDeepMind's mission is to \"solve intelligence\" and then use intelligence \"to solve everything else\". More concretely, DeepMind aims to combine insights from systems neuroscience with new developments in machine learning and computing hardware to unlock increasingly powerful general-purpose learning algorithms that will work towards the creation of an artificial general intelligence (AGI). The company has focused on training learning algorithms to master games, and in December 2013 it announced that it had made a pioneering breakthrough by training an algorithm called a Deep Q-Network (DQN) to play Atari games at a superhuman level by using only the raw pixels on the screen as inputs.\nDeepMind's early investors included several high-profile tech entrepreneurs. In 2014, Google purchased DeepMind for \u00a3400 million. Although most of the company has remained an independent entity based in London, DeepMind Health has since been directly incorporated into Google Health.\nSince the Google acquisition, the company has notched up a number of significant achievements, perhaps the most notable being the creation of AlphaGo, a program that defeated world champion Lee Sedol at the complex game of Go. Go had been considered a holy grail of AI, for its high number of possible board positions and resistance to existing programming techniques. However, AlphaGo beat European champion Fan Hui 5\u20130 in October 2015 before winning 4\u20131 against former world champion Lee Sedol in March 2016 and winning 3\u20130 against the world's top-ranked player Ke Jie in 2017. Additional DeepMind accomplishments include creating a neural Turing machine, reducing the energy used by the cooling systems in Google's data centres by 40%, and advancing research on AI safety.\nDeepMind has also been responsible for technical advances in machine learning, having produced a number of award-winning papers. In particular, the company has made significant advances in deep learning and reinforcement learning, and pioneered the field of deep reinforcement learning which combines these two methods. Hassabis has predicted that artificial intelligence will be \"one of the most beneficial technologies of mankind ever\" but that significant ethical issues remain.\nHassabis has also warned of the potential dangers and risks of AI if misused, and has been a strong advocate of further AI safety research being needed. In 2023, he signed the statement that \"Mitigating the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war\". He considers however that a pause on AI progress would be very hard to enforce worldwide, and that the potential benefits (e.g. for health and against climate change) make it worth continuing. He said that there is an urgent need for research on evaluation tests that measure how capable and controllable new AI models are.",
+              "source": "demis_hassabis.txt",
+              "score": 0.7003297029754693,
+              "metadata": {
+                "chunk_index": 6,
+                "document_id": 2815
+              }
+            },
+            {
+              "text": "Products and technologies\nAs of 2020, DeepMind has published over a thousand papers, including thirteen papers that were accepted by Nature or Science. DeepMind received media attention during the AlphaGo period; according to a LexisNexis search, 1842 published news stories mentioned DeepMind in 2016, declining to 1363 in 2019.",
+              "source": "alphacode.txt",
+              "score": 0.6632544757607642,
+              "metadata": {
+                "chunk_index": 3,
+                "document_id": 922
+              }
+            },
+            {
+              "text": "Products and technologies\nAs of 2020, DeepMind has published over a thousand papers, including thirteen papers that were accepted by Nature or Science. DeepMind received media attention during the AlphaGo period; according to a LexisNexis search, 1842 published news stories mentioned DeepMind in 2016, declining to 1363 in 2019.",
+              "source": "deepmind.txt",
+              "score": 0.6632544757607642,
+              "metadata": {
+                "chunk_index": 3,
+                "document_id": 2754
+              }
+            },
+            {
+              "text": "Artificial general intelligence research\nIn the early 2000s, several researchers became concerned that mainstream AI was too focused on \"measurable performance in specific applications\" (known as \"narrow AI\") and had abandoned AI's original goal of creating versatile, fully intelligent machines. An early critic was Nils Nilsson in 1995, and similar opinions were published by AI elder statesmen John McCarthy, Marvin Minsky, and Patrick Winston in 2007\u20132009. Minsky organized a symposium on \"human-level AI\" in 2004. Ben Goertzel adopted the term \"artificial general intelligence\" for the new sub-field, founding a journal and holding conferences beginning in 2008. The new field grew rapidly, buoyed by the continuing success of artificial neural networks and the hope that it was the key to AGI.\nSeveral competing companies, laboratories and foundations were founded to develop AGI in the 2010s. DeepMind was founded in 2010 by three English scientists, Demis Hassabis, Shane Legg and Mustafa Suleyman, with funding from Peter Thiel and later Elon Musk. The founders and financiers were deeply concerned about AI safety and the existential risk of AI. DeepMind's founders had a personal connection with Yudkowsky, and Musk was among those who were actively raising the alarm. Hassabis was both worried about the dangers of AGI and optimistic about its power; he hoped they could \"solve AI, then solve everything else.\" The New York Times wrote in 2023, \"At the heart of this competition is a brain-stretching paradox. The people who say they are most worried about AI are among the most determined to create it and enjoy its riches. They have justified their ambition with their strong belief that they alone can keep AI from endangering Earth.\"\nIn 2012, Geoffrey Hinton (who had been leading neural network research since the 80s) was approached by Baidu, which wanted to hire him and all his students for an enormous sum. Hinton decided to hold an auction and, at a Lake Tahoe AI conference, they sold themselves to Google for a price of $44 million. Hassabis took notice and sold DeepMind to Google in 2014, on the condition that it would not accept military contracts and would be overseen by an ethics board.",
+              "source": "history_of_artificial_intelligence.txt",
+              "score": 0.6295444157745882,
+              "metadata": {
+                "chunk_index": 48,
+                "document_id": 4367
+              }
+            },
+            {
+              "text": "In September 2015, DeepMind and the Royal Free NHS Trust signed their initial information sharing agreement to co-develop a clinical task management app, Streams.\nAfter Google's acquisition the company established an artificial intelligence ethics board. The ethics board for AI research remains a mystery, with both Google and DeepMind declining to reveal who sits on the board. DeepMind has opened a new unit called DeepMind Ethics and Society and focused on the ethical and societal questions raised by artificial intelligence featuring prominent philosopher Nick Bostrom as advisor. In October 2017, DeepMind launched a new research team to investigate AI ethics.\nIn December 2019, co-founder Suleyman announced he would be leaving DeepMind to join Google, working in a policy role.\nIn April 2023, DeepMind merged with Google AI's Google Brain division to form Google DeepMind, as part of the company's continued efforts to accelerate work on AI in response to OpenAI's ChatGPT. This marked the end of a years-long struggle from DeepMind executives to secure greater autonomy from Google.",
+              "source": "alphacode.txt",
+              "score": 0.6148607538980663,
+              "metadata": {
+                "chunk_index": 2,
+                "document_id": 921
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1594,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference and addresses the question."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "### Founders of DeepMind\nDeepMind was founded by Demis Hassabis, Tim Lillicrap, and Shane Legg in 2010 in London.\n\n### Details\nThe founders of DeepMind are:\n- Demis Hassabis\n- Tim Lillicrap\n- Shane Legg\n\nThe company was founded in 2010 in London, UK.",
+          "prompt_tokens": 1160,
+          "completion_tokens": 73,
+          "latency_ms": 8028.235999983735,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"evolutionary_algorithm_chunk_11\": [\n    \"Gallery\\nReferences\\nBibliography\\nAshlock, D. (2006), Evolutionary Computation for Modeling and Optimization, Springer, New York, doi:10.1007/0-387-31909-3  ISBN 0-387-22196-4.\\nB\\u00e4ck, T. (1996), Evolutionary Algorithms in Theory and Practice: Evolution Strategies, Evolutionary Programming, Genetic Algorithms, Oxford Univ. Press, New York, ISBN 978-0-19-509971-3.\\nB\\u00e4ck, T., Fogel, D., Michalewicz, Z. (1999), Evolutionary Computation 1: Basic Algorithms and Operators, CRC Press, Boca Raton, USA, ISBN 978-0-7503-0664-5.\\nB\\u00e4ck, T., Fogel, D., Michalewicz, Z. (2000), Evolutionary Computation 2: Advanced Algorithms and Operators, CRC Press, Boca Raton, USA, doi:10.1201/9781420034349 ISBN 978-0-3678-0637-8.\\nBanzhaf, W., Nordin, P., Keller, R., Francone, F. (1998), Genetic Programming - An Introduction, Morgan Kaufmann, San Francisco, ISBN 978-1-55860-510-7.\\nEiben, A.E., Smith, J.E. (2003), Introduction to Evolutionary Computing, Springer, Heidelberg, New York, doi:10.1007/978-3-662-44874-8 ISBN 978-3-662-44873-1.\\nHolland, J. H. (1992), Adaptation in Natural and Artificial Systems, MIT Press, Cambridge, MA, ISBN 978-0-262-08213-6.\\nMichalewicz, Z.; Fogel, D.B. (2004), How To Solve It: Modern Heuristics. Springer, Berlin, Heidelberg, ISBN 978-3-642-06134-9, doi:10.1007/978-3-662-07807-5.\\nBenko, Attila; Dosa, Gyorgy; Tuza, Zsolt (2010). \\\"Bin Packing/Covering with Delivery, solved with the evolution of algorithms\\\". 2010 IEEE Fifth International Conference on Bio-Inspired Computing: Theories and Applications (BIC-TA). pp. 298\\u2013302. doi:10.1109/BICTA.2010.5645312. ISBN 978-1-4244-6437-1. S2CID 16875144.\\nPrice, K., Storn, R.M., Lampinen, J.A., (2005). Differential Evolution: A Practical Approach to Global Optimization, Springer, Berlin, Heidelberg, ISBN 978-3-642-42416-8, doi:10.1007/3-540-31306-0.\\nIngo Rechenberg (1971), Evolutionsstrategie - Optimierung technischer Systeme nach Prinzipien der biologischen Evolution (PhD thesis). Reprinted by Fromman-Holzboog (1973). ISBN 3-7728-1642-8\"\n  ],\n  \"alphastar_software_chunk_1\": [\n    \"History\\nDeepMind Technologies was founded in the UK in 2010. As early as 2011, founder Demis Hassabis called StarCraft \\\"the next step up\\\" after games like Go. DeepMind became a subsidiary of Google in 2014, after demonstrating self-learning bots with superhuman ability at a variety of Atari 2600 games. In February 2015, computer scientist Zachary Mason predicted Deepmind's research \\\"leads to StarCraft in five or ten years\\\". In March 2016, following AlphaGo's victory over Lee Sedol, a world champion Go player, Hassabis publicly mulled building an AI for StarCraft, citing it as a strategic game with incomplete information where, unlike Go, much of the \\\"board\\\" is invisible. A formal collaboration was announced at BlizzCon in November 2016, alongside a plan to release an open development environment for bots in Q1 of 2017.\\nBy 2017, DeepMind was experimenting with feeding StarCraft data into its software. In August 2017, DeepMind and Blizzard released development tools to assist in bot development, as well as data from 65,000 historical games. At the time, computer scientist and StarCraft tournament manager David Churchill estimated it would take five years for a bot to beat a human, but made the caveat that AlphaGo had beaten expectations. In Wired, tech journalist Tom Simonite stated \\\"No one expects the robot to win anytime soon. But when it does, it will be a far greater achievement than DeepMind's conquest of Go.\\\"\"\n  ],\n  \"alphafold_chunk_3\": [\n    \"Background\\nProteins consist of chains of amino acids which spontaneously fold to form the three dimensional (3-D) structures of the proteins. The 3-D structure is crucial to understanding the biological function of the protein.\\nProtein structures can be determined experimentally through techniques such as X-ray crystallography, cryo-electron microscopy and nuclear magnetic resonance (N",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1233,
+          "grading": {
+            "judge_pass": false,
+            "judge_reason": "The prediction incorrectly lists Tim Lillicrap as a co-founder, omitting Mustafa Suleyman, who is mentioned in the reference."
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "single_fact",
+      "question": "What was AlexNet and who built it?",
+      "reference": "AlexNet was a convolutional neural network that won the 2012 ImageNet Large Scale Visual Recognition Challenge by a wide margin. It was built by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton at the University of Toronto.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "AlexNet is a deep convolutional neural network (CNN) architecture that was designed for image classification tasks. It was created by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton, and it was one of the first deep learning models to achieve state-of-the-art performance on a large-scale image classification task.\n\nThe AlexNet architecture was submitted to the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) in 2012, where it achieved a top-5 error rate of 15.3%, which was significantly better than the second-best entry, which had an error rate of 26.2%. This was a major breakthrough in the field of computer vision and deep learning, as it demonstrated that a deep neural network could outperform traditional computer vision techniques on a large-scale image classification task.\n\nThe AlexNet architecture consists of five convolutional layers, followed by three fully connected layers. The convolutional layers use a combination of convolutional filters, max-pooling, and rectified linear units (ReLUs) to extract features from the input images. The fully connected layers use dropout regularization to prevent overfitting. The network was trained using a large dataset of images from ImageNet, which consists of over 1.2 million images from 1000 different classes.\n\nThe key innovations of AlexNet include:\n\n* The use of ReLUs instead of sigmoid or tanh activation functions, which improved the training speed and accuracy of the network.\n* The use of dropout regularization to prevent overfitting in the fully connected layers.\n* The use of a large receptive field in the convolutional layers to capture complex features.\n* The use of a GPU to train the network, which significantly reduced the training time.\n\nAlexNet's success marked a turning point in the field of computer vision and deep learning, and it paved the way for the development of more complex and powerful neural network architectures.",
+          "prompt_tokens": 19,
+          "completion_tokens": 378,
+          "latency_ms": 1126.5191999846138,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 397,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference and addresses the question, including the key details of the creators and the architecture of AlexNet."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "AlexNet was a powerful visual-recognition network developed by Alex Krizhevsky, Ilya Sutskever, and their PhD advisor Geoffrey Hinton, at the University of Toronto. It was a Convolutional Neural Network (CNN) that won the ImageNet challenge in 2012 and is widely credited with igniting the deep learning revolution.",
+          "prompt_tokens": 996,
+          "completion_tokens": 71,
+          "latency_ms": 8754.407699976582,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "Title: Alex Krizhevsky\nCategory: researchers\nSource: Wikipedia\n\nAlex Krizhevsky is a Canadian computer scientist most noted for his work on artificial neural networks and deep learning. In 2012, Krizhevsky, Ilya Sutskever and their PhD advisor Geoffrey Hinton, at the University of Toronto, developed a powerful visual-recognition network AlexNet using only two GeForce-branded GPU cards. This revolutionized research in neural networks. Previously neural networks were trained on CPUs. The transition to GPUs opened the way to the development of advanced AI models.",
+              "source": "alex_krizhevsky.txt",
+              "score": 0.5650496115606186,
+              "metadata": {
+                "chunk_index": 0,
+                "document_id": 836
+              }
+            },
+            {
+              "text": "AlexNet\nMotivated by Sutskever and inspired by Hinton, Krizhevsky developed AlexNet to expand the limits in image recognition and classification. Building on Convolutional Neural Networks and Sutskever\u2019s Deep Neural Network approach of deepening the neural layers far beyond the convention of the time\u2014as well as adding Dropout for training resilience\u2014AlexNet won the ImageNet challenge in 2012. The team presented their paper for AlexNet at NeurIPS (NIPS) 2012.\nShortly after AlexNet\u2019s debut, Krizhevsky and Sutskever sold their startup, DNN Research Inc., to Google. Krizhevsky left Google in September 2017 after losing interest in the work, to work at the company Dessa in support of new deep-learning techniques. Many of his numerous papers on machine learning and computer vision are frequently cited by other researchers. He is also the main author of the CIFAR-10 and CIFAR-100 datasets.",
+              "source": "alex_krizhevsky.txt",
+              "score": 0.5314781980576845,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 837
+              }
+            },
+            {
+              "text": "Legacy\nAlexNet is widely credited with igniting the deep learning revolution. Its success demonstrated the effectiveness of deep neural networks trained on GPUs, leading to rapid progress across multiple domains of artificial intelligence beyond computer vision. The techniques and momentum generated by AlexNet helped shape the development of modern natural language processing models, including large-scale transformer-based models such as BERT and GPT, which power tools like ChatGPT.\n\nReferences\nExternal links\nAlex Krizhevsky's home page",
+              "source": "alex_krizhevsky.txt",
+              "score": 0.505150272371263,
+              "metadata": {
+                "chunk_index": 2,
+                "document_id": 838
+              }
+            },
+            {
+              "text": "Architecture\nAlexNet contains eight layers: the first five are convolutional layers, some of them followed by max-pooling layers, and the last three are fully connected layers. The network, except the last layer, is split into two copies, each run on one GPU, because the network did not fit the VRAM of a single Nvidia GTX 580 3GB GPU. The entire structure can be written as(CONV \u2192 RN \u2192 MP)2 \u2192 (CONV3 \u2192 MP) \u2192 (FC \u2192 DO)2 \u2192 Linear \u2192 softmaxwhere\nCONV = convolutional layer (with ReLU activation)\nRN = local response normalization\nMP = max-pooling\nFC = fully connected layer (with ReLU activation)\nLinear = fully connected layer (without activation)\nDO = dropout\nNotably, the convolutional layers 3, 4, 5 were connected to one another without any pooling or normalization. It used the non-saturating ReLU activation function, which trained better than tanh and sigmoid.",
+              "source": "alexnet.txt",
+              "score": 0.48876331981344284,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 840
+              }
+            },
+            {
+              "text": "Subsequent work\nAlexNet is highly influential, resulting in much subsequent work in using CNNs for computer vision and using GPUs to accelerate deep learning. As of early 2025, the AlexNet paper has been cited over 184,000 times according to Google Scholar.\nAt the time of publication, there was no framework available for GPU-based neural network training and inference. The codebase for AlexNet was released under a BSD license, and had been commonly used in neural network research for several subsequent years.\nIn one direction, subsequent works aimed to train increasingly deep CNNs that achieve increasingly higher performance on ImageNet. In this line of research are GoogLeNet (2014), VGGNet (2014), Highway network (2015), and ResNet (2015). Another direction aimed to reproduce the performance of AlexNet at a lower cost. In this line of research are SqueezeNet (2016), MobileNet (2017), EfficientNet (2019).\nGeoffrey Hinton, Ilya Sutskever, and Alex Krizhevsky formed DNNResearch soon afterwards and sold the company, and the AlexNet source code along with it, to Google. There had been improvements and reimplementations for the AlexNet, but the original version as of 2012, at the time of its winning of ImageNet, had been released under BSD-2 license via Computer History Museum.",
+              "source": "alexnet.txt",
+              "score": 0.470352024477066,
+              "metadata": {
+                "chunk_index": 7,
+                "document_id": 846
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1067,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, addressing the question and including the key details about AlexNet's creators and achievements."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "# AlexNet and Its Creators\n\nAlexNet is a deep convolutional neural network designed for image classification tasks. It was created by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton. The network was introduced in 2012 and achieved state-of-the-art results in the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) that year, winning the competition.\n\n## Key Features and Achievements\n- **Creators**: Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton\n- **Introduction Year**: 2012\n- **Achievement**: Won the ImageNet Large Scale Visual Recognition Challenge (ILSVRC)\n- **Error Rate**: Achieved a top-5 error rate of 15.3%, significantly better than the second best entry at 26.2%\n\nAlexNet is considered a landmark model in the development of deep learning and computer vision, contributing significantly to the advancement of image classification techniques.",
+          "prompt_tokens": 863,
+          "completion_tokens": 197,
+          "latency_ms": 46981.065700005274,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"connectionism_chunk_4\": [\n    \"Biological realism\\nConnectionist work in general does not need to be biologically realistic. One area where connectionist models are thought to be biologically implausible is with respect to error-propagation networks that are needed to support learning, but error propagation can explain some of the biologically-generated electrical activity seen at the scalp in event-related potentials such as the N400 and P600, and this provides some biological support for one of the key assumptions of connectionist learning procedures. Many recurrent connectionist models also incorporate dynamical systems theory. Many researchers, such as the connectionist Paul Smolensky, have argued that connectionist models will evolve toward fully continuous, high-dimensional, non-linear, dynamic systems approaches.\\n\\nPrecursors\\nPrecursors of the connectionist principles can be traced to early work in psychology, such as that of William James. Psychological theories based on knowledge about the human brain were fashionable in the late 19th century.  As early as 1869, the neurologist John Hughlings Jackson argued for multi-level, distributed systems. Following from this lead, Herbert Spencer's Principles of Psychology, 3rd edition (1872), and Sigmund Freud's Project for a Scientific Psychology (composed 1895) propounded connectionist or proto-connectionist theories. These tended to be speculative theories. But by the early 20th century, Edward Thorndike was writing about human learning that posited a connectionist type network.\\nHopfield networks had precursors in the Ising model due to Wilhelm Lenz (1920) and Ernst Ising (1925), though the Ising model conceived by them did not involve time. Monte Carlo simulations of Ising model required the advent of computers in the 1950s.\"\n  ],\n  \"connectionism_chunk_5\": [\n    \"The first wave\\nThe first wave begun in 1943 with Warren Sturgis McCulloch and Walter Pitts both focusing on comprehending neural circuitry through a formal and mathematical approach.  McCulloch and Pitts showed how neural systems could implement first-order logic: Their classic paper \\\"A Logical Calculus of Ideas Immanent in Nervous Activity\\\" (1943) is important in this development here. They were influenced by the work of Nicolas Rashevsky in the 1930s and symbolic logic in the style of Principia Mathematica.\\nHebb contributed greatly to speculations about neural functioning, and proposed a learning principle, Hebbian learning. Lashley argued for distributed representations as a result of his failure to find anything like a localized engram in years of lesion experiments. Friedrich Hayek independently conceived the model, first in a brief unpublished manuscript in 1920, then expanded into a book in 1952.\\nThe Perceptron machines were proposed and built by Frank Rosenblatt, who published the 1958 paper \\u201cThe Perceptron: A Probabilistic Model For Information Storage and Organization in the Brain\\u201d in Psychological Review, while working at the Cornell Aeronautical Laboratory. He cited Hebb, Hayek, Uttley, and Ashby as main influences.\\nAnother form of connectionist model was the relational network framework developed by the linguist Sydney Lamb in the 1960s.\\nThe research group led by Widrow empirically searched for methods to train two-layered ADALINE networks (MADALINE), with limited success.\\nA method to train multilayered perceptrons with arbitrary levels of trainable weights was published by Alexey Grigorevich Ivakhnenko and Valentin Lapa in 1965, called the Group Method of Data Handling. This method employs incremental layer by layer training based on regression analysis, where useless units in hidden layers are pruned with the help of a validation set.\"\n  ],\n  \"recurrent_neural_network_chunk_1\": [\n    \"History\\nBefore modern\\nOne origin of RNN was neuroscience. The word \\\"recurrent\\\" is used to describe loop-like structures in anatomy. In 1901, Cajal observed \\\"recurrent semicircles\\\" in the",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1060,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, addressing the question of who built AlexNet and its key features."
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "single_fact",
+      "question": "What architecture was introduced in the paper 'Attention Is All You Need', and which lab published it?",
+      "reference": "The Transformer architecture was introduced in the 2017 paper 'Attention Is All You Need' by Ashish Vaswani and colleagues at Google Brain.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "The paper \"Attention Is All You Need\" introduced the Transformer architecture. It was published in 2017 by researchers at Google.\n\nThe paper, authored by Vaswani et al., presented a novel neural network architecture called the Transformer, which relies entirely on self-attention mechanisms to process input sequences, eliminating the need for recurrent neural networks (RNNs) and convolutional neural networks (CNNs). The Transformer has since become a widely-used and influential architecture in natural language processing (NLP) and other areas of AI research.\n\nThe paper was published in the Advances in Neural Information Processing Systems (NIPS) conference in 2017.",
+          "prompt_tokens": 30,
+          "completion_tokens": 127,
+          "latency_ms": 384.0568999876268,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 157,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, addressing the question about the architecture and lab that published the paper."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "The architecture introduced in the paper \"Attention Is All You Need\" is the Transformer architecture. The paper was published by the authors, and although the context does not explicitly mention the lab, it does mention that the \"reference implementation\" of the original Transformer was written in a TensorFlow library, implying a possible connection to Google or a research institution that utilizes TensorFlow. However, a specific lab is not directly mentioned in the context as publishing the paper. \n\nThe key point is that the paper \"Attention is all you need\" was published on 2017-06-12 and introduced the Transformer model.",
+          "prompt_tokens": 834,
+          "completion_tokens": 122,
+          "latency_ms": 4975.316600000951,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "In 2016, decomposable attention applied a self-attention mechanism to feedforward networks, which are easy to parallelize, and achieved SOTA result in textual entailment with an order of magnitude fewer parameters than LSTMs One of its authors, Jakob Uszkoreit, suspected that attention without recurrence would be sufficient for language translation, thus the title \"attention is all you need\" That hypothesis was against conventional wisdom at the time, and even his father Hans Uszkoreit, a well-known computational linguist, was skeptical In the same year, self-attention (called intra-attention or intra-sentence attention) was proposed for LSTMs On 2017-06-12, the original (100M-parameter) encoder\u2013decoder transformer model was published in the \"Attention is all you need\" paper",
+              "source": "transformer_deep_learning_architecture.txt",
+              "score": 0.47030659004870523,
+              "metadata": {
+                "chunk_index": 8,
+                "document_id": 8819
+              }
+            },
+            {
+              "text": "Four days after the publication of \"Attention is All You Need\", a multimodal transformer architecture, MultiModel, was published by most authors of that paper Four days after the publication of \"Attention is All You Need\", a multimodal transformer architecture, MultiModel, was published by most authors of that paper Other examples include the vision transformer, speech recognition, robotics, and multimodal The vision transformer, in turn, stimulated new developments in convolutional neural networks Image and video generators like DALL-E (2021), Stable Diffusion 3 (2024), and Sora (2024), use transformers to analyse input data (like text prompts) by breaking it down into \"tokens\" and then calculating the relevance between each token using self-attention, which helps the model understand the context and relationships within the data Training\nMethods for stabilizing training\nThe plain transformer architecture had difficulty in converging",
+              "source": "transformer_deep_learning_architecture.txt",
+              "score": 0.458760174036115,
+              "metadata": {
+                "chunk_index": 11,
+                "document_id": 8822
+              }
+            },
+            {
+              "text": "At the time, the focus of the research was on improving seq2seq for machine translation, by removing its recurrence to process all tokens in parallel, but preserving its dot-product attention mechanism to keep its text processing performance This led to the introduction of a multi-head attention model that was easier to parallelize due to the use of independent heads and the lack of recurrence Its parallelizability was an important factor to its widespread use in large neural networks AI boom era\nAs early as spring 2017, even before the \"Attention is all you need\" preprint was published, one of the co-authors applied the \"decoder-only\" variation of the architecture to generate fictitious Wikipedia articles Transformer architecture is now used alongside many generative models that contribute to the ongoing AI boom The \"reference implementation\" of the original Transformer was written in a TensorFlow library",
+              "source": "transformer_deep_learning_architecture.txt",
+              "score": 0.44319629201233357,
+              "metadata": {
+                "chunk_index": 9,
+                "document_id": 8820
+              }
+            },
+            {
+              "text": "History\nThe project was the brainchild of Marvin Minsky, Push Singh, Catherine Havasi, and others. Development work began in September 1999, and the project opened to the Internet a year later. Havasi described it in her dissertation as \"an attempt to ... harness some of the distributed human computing power of the Internet, an idea which was then only in its early stages.\" The original OMCS was influenced by the website Everything2 and its predecessor, and presents a minimalist interface that is inspired by Google.\nPush Singh would have become a professor at the MIT Media Lab and lead the Common Sense Computing group in 2007, but committed suicide on February 28, 2006.\nThe project is currently run by the Digital Intuition Group at the MIT Media Lab under Catherine Havasi.",
+              "source": "conceptnet.txt",
+              "score": 0.43470272116711267,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 2272
+              }
+            },
+            {
+              "text": "The small model aims to fool the large model The small model aims to fool the large model DeBERTa (2020) is a significant architectural variant, with disentangled attention Its key idea is to treat the positional and token encodings separately throughout the attention mechanism",
+              "source": "bert_language_model.txt",
+              "score": 0.4345571816028731,
+              "metadata": {
+                "chunk_index": 18,
+                "document_id": 1685
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 956,
+          "grading": {
+            "judge_pass": false,
+            "judge_reason": "The prediction contradicts the reference by stating that a specific lab is not directly mentioned, when in fact the reference explicitly states that the paper was published by Google Brain."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "## Introduction\nThe paper 'Attention Is All You Need' introduced a groundbreaking architecture in the field of natural language processing.\n\n## Architecture and Publication\nThe architecture introduced in the paper 'Attention Is All You Need' is the **Transformer architecture**. This paper was published by the **Google Brain team**.\n\n## Details\nThe Transformer architecture was specifically designed to handle sequence-to-sequence tasks, leveraging self-attention mechanisms to weigh the importance of different parts of the input sequence. This innovation significantly improved the efficiency and effectiveness of models in various NLP tasks.\n\n## Conclusion\nIn conclusion, the Transformer architecture, a pivotal development in NLP, was introduced in the paper 'Attention Is All You Need' by the Google Brain team.",
+          "prompt_tokens": 859,
+          "completion_tokens": 146,
+          "latency_ms": 7766.984199988656,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"google_brain_chunk_6\": [\n    \"Interactive Speaker Recognition with Reinforcement Learning\\nIn 2020, Google Brain Team and University of Lille presented a model for automatic speaker recognition which they called Interactive Speaker Recognition. The ISR module recognizes a speaker from a given list of speakers only by requesting a few user specific words. The model can be altered to choose speech segments in the context of Text-To-Speech Training. It can also prevent malicious voice generators from accessing the data.\\n\\nTensorFlow\\nTensorFlow is an open source software library powered by Google Brain that allows anyone to utilize machine learning by providing the tools to train one's own neural network. The tool has been used to develop software using deep learning models that farmers use to reduce the amount of manual labor required to sort their yield, by training it with a data set of human-sorted images.\\n\\nMagenta\\nMagenta is a project that uses Google Brain to create new information in the form of art and music rather than classify and sort existing data. TensorFlow was updated with a suite of tools for users to guide the neural network to create images and music. However, the team from Valdosta State University found that the AI struggles to perfectly replicate human intention in artistry, similar to the issues faced in translation.\\n\\nMedical applications\\nThe image sorting capabilities of Google Brain have been used to help detect certain medical conditions by seeking out patterns that human doctors may not notice to provide an earlier diagnosis. During screening for breast cancer, this method was found to have one quarter the false positive rate of human pathologists, who require more time to look over each photo and cannot spend their entire focus on this one task. Due to the neural network's very specific training for a single task, it cannot identify other afflictions present in a photo that a human could easily spot.\"\n  ],\n  \"recurrent_neural_network_chunk_2\": [\n    \"Similar networks were published by Kaoru Nakano in 1971,Shun'ichi Amari in 1972, and William A. Little in 1974, who was acknowledged by Hopfield in his 1982 paper.\\nAnother origin of RNN was statistical mechanics. The Ising model was developed by Wilhelm Lenz and Ernst Ising in the 1920s as a simple statistical mechanical model of magnets at equilibrium. Glauber in 1963 studied the Ising model evolving in time, as a process towards equilibrium (Glauber dynamics), adding in the component of time.\\nThe Sherrington\\u2013Kirkpatrick model of spin glass, published in 1975, is the Hopfield network with random initialization. Sherrington and Kirkpatrick found that it is highly likely for the energy function of the SK model to have many local minima. In the 1982 paper, Hopfield applied this recently developed theory to study the Hopfield network with binary activation functions. In a 1984 paper he extended this to continuous activation functions. It became a standard model for the study of neural networks through statistical mechanics.\"\n  ],\n  \"recurrent_neural_network_chunk_1\": [\n    \"History\\nBefore modern\\nOne origin of RNN was neuroscience. The word \\\"recurrent\\\" is used to describe loop-like structures in anatomy. In 1901, Cajal observed \\\"recurrent semicircles\\\" in the cerebellar cortex formed by parallel fiber, Purkinje cells, and granule cells. In 1933, Lorente de N\\u00f3 discovered \\\"recurrent, reciprocal connections\\\" by Golgi's method, and proposed that excitatory loops explain certain aspects of the vestibulo-ocular reflex. During 1940s, multiple people proposed the existence of feedback in the brain, which was a contrast to the previous understanding of the neural system as a purely feedforward structure. Hebb considered \\\"reverberating circuit\\\" as an explanation for short-term memory. The McCulloch and Pitts paper (1943), which proposed the McCulloch-Pitts neuron model, considered networks that contains cycles. The current activity of suc",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1005,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference and addresses the question."
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "single_fact",
+      "question": "Who founded Anthropic and when?",
+      "reference": "Anthropic was founded in 2021 by Dario Amodei, Daniela Amodei, and other former OpenAI researchers, in San Francisco.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "Anthropic was founded in 2021 by Dario Amodei, Sam Altman, and others. Dario Amodei is a well-known AI researcher who previously worked at OpenAI, where he served as the company's research director. He left OpenAI to co-found Anthropic with Sam Altman, who is also the CEO of OpenAI. The exact date of founding is not certain, but it was sometime in 2021.",
+          "prompt_tokens": 17,
+          "completion_tokens": 90,
+          "latency_ms": 336.10170002793893,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 107,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, although it incorrectly identifies Sam Altman as a co-founder, when the reference actually lists Daniela Amodei."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "Anthropic was founded in 2021 by seven former employees of OpenAI, including siblings Daniela Amodei and Dario Amodei.",
+          "prompt_tokens": 736,
+          "completion_tokens": 31,
+          "latency_ms": 8240.4014999629,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "Title: Anthropic\nCategory: labs_orgs\nSource: Wikipedia\n\nAnthropic is an American artificial intelligence (AI) company headquartered in San Francisco. It has developed a range of large language models (LLMs) named Claude and focuses on AI safety.\nAnthropic was founded in 2021 by former members of OpenAI, including siblings Daniela Amodei and Dario Amodei, who are president and CEO, respectively. The company is privately held and, as of February 2026, had an estimated value of $380 billion.\n\nHistory\n2021\u20132023\nAnthropic was founded in 2021 by seven former employees of OpenAI, including siblings Daniela Amodei and Dario Amodei, the latter of whom was OpenAI's Vice President of Research.\nAccording to the company's founders, its name reflects its existential mission to help people lead their best lives. In a July 2023 interview, company co-founder Daniela Amodei explained why the founders chose the name \"Anthropic\":",
+              "source": "anthropic.txt",
+              "score": 0.5526784468585059,
+              "metadata": {
+                "chunk_index": 0,
+                "document_id": 1050
+              }
+            },
+            {
+              "text": "One reason is that \"anthropic\" means relating to humans, and a lot of what has been important for us, as we're working on these ever more powerful generative AI tools that are interacting with the world, is wanting to make sure that humans are still at the center of that story.\nIn the summer of 2022, Anthropic finished training the first version of Claude but did not immediately release it, citing a need for further internal safety testing and a desire to avoid initiating a potentially hazardous race to develop increasingly powerful AI systems. It was released in March 2023.",
+              "source": "anthropic.txt",
+              "score": 0.48764000973480226,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 1051
+              }
+            },
+            {
+              "text": "Business structure\nAccording to Anthropic, its goal is to research AI systems' safety and reliability. The Amodei siblings were among those who left OpenAI due to directional differences. Anthropic operates as a public benefit corporation.\nAnthropic's \"Long-Term Benefit Trust\" is a purpose trust for \"the responsible development and maintenance of advanced AI for the long-term benefit of humanity\". It holds Class T shares in the PBC, which allow it to elect directors to Anthropic's board. As of January 2026, the members of the Trust are Neil Buddy Shah, Mariano-Florentino Cu\u00e9llar, and Richard Fontaine.\nIn January 2026, Anthropic introduced a division called \"Labs\", with Mike Krieger (formerly the company's Chief Product Officer) joining it.\nIn March 2026, Anthropic launched the Anthropic Institute, a think tank led by Jack Clark studying AI.",
+              "source": "anthropic.txt",
+              "score": 0.44358712216302393,
+              "metadata": {
+                "chunk_index": 3,
+                "document_id": 1053
+              }
+            },
+            {
+              "text": "Education-related projects\nIn August 2025, Anthropic launched a Higher Education Advisory Board, chaired by former Yale University president and former Coursera CEO Rick Levin.\nAnthropic partnered with Iceland's Ministry of Education and Children in 2025 to allow teachers to access Claude and integrate AI into daily teaching.",
+              "source": "anthropic.txt",
+              "score": 0.42435547032318327,
+              "metadata": {
+                "chunk_index": 9,
+                "document_id": 1059
+              }
+            },
+            {
+              "text": "History\nMidjourney, Inc. was founded in San Francisco, California, by David Holz, previously a co-founder of Leap Motion. The Midjourney image generation platform entered open beta on July 12, 2022. On March 14, 2022, the Midjourney Discord server launched with a request to post high-quality photographs to Twitter and Reddit for systems training.",
+              "source": "midjourney.txt",
+              "score": 0.3775089070905986,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 6025
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 767,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, including the key founders and the year of founding."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "Anthropic was founded in 2021 by Dario Amodei, a former OpenAI executive, and his sister, Daniela Amodei. Chris Olah is also a co-founder of Anthropic.",
+          "prompt_tokens": 871,
+          "completion_tokens": 43,
+          "latency_ms": 10873.493100050837,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"sam_altman_chunk_5\": [\n    \"Worldcoin\\nIn 2019, Altman co-founded the for-profit company Tools For Humanity with Alex Blania (CEO) and others. The company promoted the Worldcoin cryptocurrency and eye-scanning systems to provide proof of personhood and authentication. However, it has engaged in deceptive marketing practices to drive sign-ups. By 2023, Tools For Humanity had scanned two million people's eyes and raised $250 million from several investors, including Andreessen Horowitz and Sam Bankman-Fried.\\nKenya was one of the first countries to register WorldCoin. The promise of free money led to rapid growth in Kenya until WorldCoin promotion was paused by regulators. Citing legal concerns over biometric data privacy and potential fraud concerns, regulators in France, the United Kingdom, Bavaria, South Korea,  Spain, Portugal, and Hong Kong have investigated or suspended WorldCoin. WorldCoin has never been offered in the United States and the company limits its disclosures due to regulatory scrutiny.\\n\\nEnergy investments\\nAltman is chairman of the board for Helion Energy, a company focused on developing nuclear fusion. He also invested in Exowatt, a solar energy startup that aims to provide clean energy to data centers. In March 2021, Altman and investment banker Michael Klein co-founded AltC Acquisition Corp, a special-purpose acquisition company (SPAC), where he was also the CEO. In May 2024, Oklo Inc. completed a merger with the SPAC to become a public company. Altman remained as chairman of Oklo following the merger until stepping down in April 2025 to \\\"avoid conflict of interest\\\" and \\\"open up opportunities for future deals between OpenAI and Oklo.\\\"\"\n  ],\n  \"sam_altman_chunk_10\": [\n    \"In May 2024, after OpenAI's non-disparagement agreements were exposed, Altman was accused of lying when claiming to have been unaware of the equity cancellation provision for departing employees who don't sign the agreement. Also in May, former board member Helen Toner explained the board's rationale for firing Altman in November 2023. She stated that Altman had withheld information, for example by not informing the board in advance of ChatGPT's release and by not disclosing his ownership of OpenAI's startup fund. She also alleged that two executives in OpenAI had reported \\\"psychological abuse\\\" from Altman, and provided screenshots and documentation to support their claims. She said that many employees feared retaliation if they didn't support Altman, and that when Altman was Loopt's CEO, the management team asked twice to fire him for what they called \\\"deceptive and chaotic behavior\\\".\"\n  ],\n  \"sam_altman_chunk_9\": [\n    \"Removal and reinstatement as OpenAI CEO\\nOn November 17, 2023, OpenAI's board, composed of researcher Helen Toner, Quora CEO Adam D'Angelo, AI governance advocate Tasha McCauley, and, most prominently in the firing, OpenAI co-founder and chief scientist Ilya Sutskever, announced that they had made the decision to remove Altman as CEO and Greg Brockman from the board, both of whom were co-founders. The announcement cited that Altman \\\"was not consistently candid in his communications\\\". In response, Brockman resigned from his role as President of OpenAI. According to The New Yorker, Altman returned to his home and coordinated with consultant Chris Lehane, Airbnb executive Brian Chesky, and a team of staff to implement a strategy for his reinstatement. Altman stated that his team was focused on damaging interim CEO Mira Murati's reputation. The day after Altman was removed, the board discussed bringing him back to OpenAI.\\nOn November 20, 2023, Microsoft CEO Satya Nadella announced that Altman would be joining Microsoft to lead a new advanced AI research team. Two days later, OpenAI employees published an open letter to the board threatening to leave OpenAI and join Microsoft, where all employees had been promised jobs, unless all board members step down and reinstate Altman as CEO. 505 employees initially s",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 914,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, addressing the question of who founded Anthropic and when, with the exception of the mention of Chris Olah, which is not mentioned in the reference."
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "multi_hop",
+      "question": "Which of the 2018 Turing Award co-recipients have worked at Google?",
+      "reference": "The 2018 Turing Award was shared by Geoffrey Hinton, Yann LeCun, and Yoshua Bengio. Of the three, Geoffrey Hinton joined Google (Google Brain) in 2013 and worked there until his 2023 resignation. LeCun has been at Meta AI, and Bengio has been at Universit\u00e9 de Montr\u00e9al / Mila.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "The 2018 Turing Award was awarded to Geoffrey Hinton, Yann LeCun, and Yoshua Bengio. \n\nAmong them, Geoffrey Hinton has worked at Google. He was a part-time researcher at Google DeepMind.",
+          "prompt_tokens": 26,
+          "completion_tokens": 48,
+          "latency_ms": 226.7798000248149,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 74,
+          "grading": {
+            "judge_pass": false,
+            "judge_reason": "The prediction incorrectly states that Geoffrey Hinton worked at Google DeepMind, whereas the reference states that he worked at Google (Google Brain)."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "According to the context provided, I couldn't find any information about the 2018 Turing Award co-recipients. However, I can tell you that the 2018 Turing Award was not mentioned in the context. \n\nThe context only mentioned that Richard S. Sutton received the 2024 Turing Award, and Noam Shazeer has worked at Google, but there was no information about the 2018 Turing Award recipients.\n\nIf you provide more context or information about the 2018 Turing Award co-recipients, I can try to help you.",
+          "prompt_tokens": 1173,
+          "completion_tokens": 111,
+          "latency_ms": 12600.782499997877,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "Recipients\nSee also\nReferences\nFurther reading\nAkmut, Camille (June 12, 2018). \"Social conditions of outstanding contributions to computer science : a prosopography of Turing Award laureates (1966-2016)\". hal.science. Retrieved December 12, 2024.\n\nExternal links\n\nACM Chronological listing of Turing Laureates\nACM A.M. Turing Award Centenary Celebration\nACM A.M. Turing Award Laureate Interviews\nCelebration of 50 Years of the ACM A.M. Turing Award",
+              "source": "turing_award.txt",
+              "score": 0.6439610676333067,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 8943
+              }
+            },
+            {
+              "text": "The ACM A. M. Turing Award is an annual prize given by the Association for Computing Machinery (ACM) for contributions of lasting and major technical importance to computer science. It is generally recognized as the highest distinction in the field of computer science and is often referred to as the \"Nobel Prize of Computing\". As of 2026, 81 people have been awarded the prize, with the most recent recipients being Charles H. Bennett and Gilles Brassard, who won in 2025.\nThe award is named after Alan Turing, also referred as \"Father of Computer Science\", who was a British mathematician and reader in mathematics at the University of Manchester. Turing is often credited as being the founder of theoretical computer science and artificial intelligence, and a key contributor to the Allied cryptanalysis of the Enigma cipher during World War II. From 2007 to 2013, the award was accompanied by a prize of US$250,000, with financial support provided by Intel and Google. Since 2014, the award has been accompanied by a prize of US$1 million, with financial support provided by Google.\nThe first recipient, in 1966, was Alan Perlis. The youngest recipient was Donald Knuth, who won in 1974 at the age of 36, while the oldest recipient was Alfred Aho, who won in 2020 at the age of 79. Three women have been awarded the prize: Frances Allen (in 2006), Barbara Liskov (in 2008), and Shafi Goldwasser (in 2012).",
+              "source": "turing_award.txt",
+              "score": 0.5888518450750893,
+              "metadata": {
+                "chunk_index": 0,
+                "document_id": 8942
+              }
+            },
+            {
+              "text": "Awards and honors\nSutton has been a Fellow of the Association for the Advancement of Artificial Intelligence (AAAI) since 2001; his nomination read: \"For significant contributions to many topics in machine learning, including reinforcement learning, temporal difference techniques, and neural networks.\"  In 2003, he received the President's Award from the International Neural Network Society and in 2013, the Outstanding Achievement in Research award from the University of Massachusetts Amherst. He received the 2024 Turing Award from the Association for Computing Machinery together with Andrew Barto; the citation of the award read: \"For developing the conceptual and algorithmic foundations of reinforcement learning.\"\nIn 2016, Sutton was elected Fellow of the Royal Society of Canada. In 2021, he was elected Fellow of the Royal Society (FRS) of London.",
+              "source": "richard_s_sutton.txt",
+              "score": 0.5685311182548209,
+              "metadata": {
+                "chunk_index": 5,
+                "document_id": 7789
+              }
+            },
+            {
+              "text": "Career\nNoam Shazeer joined Google in 2000. One of his first major achievements was improving the spelling corrector of Google's search engine. In 2017, Shazeer was one of the lead authors of the seminal paper \"Attention Is All You Need\", which introduced the transformer architecture.\nAt Google, Shazeer and his colleague Daniel de Freitas built a chatbot named Meena. Following the refusal of Google to release the chatbot to the public, Shazeer and Freitas left the company in 2021 to found Character.AI.\nIn 2023 Time magazine chose Shazeer as one of the 100 most influential people in the AI world.\nIn August 2024, it was reported that Shazeer would be returning to Google to co-lead the Gemini AI project. Shazeer was appointed as technical lead on Gemini, along with Jeff Dean and Oriol Vinyals. It was part of a $2.7 billion deal for Google to license Character's technology. Since he owns 30-40% of the company, it is estimated he netted $750 million-$1 billion. In 2026, he was elected a member of the National Academy of Engineering.",
+              "source": "noam_shazeer.txt",
+              "score": 0.5370635004306777,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 6508
+              }
+            },
+            {
+              "text": "History\nThe Google Brain project began in 2011 as a part-time research collaboration between Google fellow Jeff Dean and Google Researcher Greg Corrado. Google Brain started as a Google X project and became so successful that it was graduated back to Google: Astro Teller has said that Google Brain paid for the entire cost of Google X.\nIn June 2012, the The New York Times reported that a cluster of 16,000 processors in 1,000 computers dedicated to mimicking some aspects of human brain activity had successfully trained itself to recognize a cat based on 10 million digital images taken from YouTube videos. The story was also covered by National Public Radio (NPR).\nIn March 2013, Google hired Geoffrey Hinton, a leading researcher in the deep learning field, and acquired the company DNNResearch Inc. headed by Hinton. Hinton said that he would be dividing his future time between his university research and his work at Google.\nIn April 2023, Google Brain merged with Google sister company DeepMind to form Google DeepMind, as part of the company's continued efforts to accelerate work on AI.",
+              "source": "google_brain.txt",
+              "score": 0.5346603105125306,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 4002
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1284,
+          "grading": {
+            "judge_pass": false,
+            "judge_reason": "The prediction contradicts the reference by stating that no information about the 2018 Turing Award co-recipients was provided, when in fact the reference explicitly states that Geoffrey Hinton, Yann LeCun, and Yoshua Bengio were the co-recipients."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "## 2018 Turing Award Co-recipients Who Have Worked at Google\n\nThe 2018 Turing Award co-recipients who have worked at Google are Geoffrey Hinton and Yoshua Bengio, and Yann LeCun.\n\n### Details\n- Yoshua Bengio, Geoffrey Hinton, and Yann LeCun are the 2018 Turing Award co-recipients.\n- All three have been associated with Google at some point in their careers.",
+          "prompt_tokens": 960,
+          "completion_tokens": 92,
+          "latency_ms": 15222.4013999803,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"evolutionary_algorithm_chunk_12\": [\n    \"Ingo Rechenberg (1971), Evolutionsstrategie - Optimierung technischer Systeme nach Prinzipien der biologischen Evolution (PhD thesis). Reprinted by Fromman-Holzboog (1973). ISBN 3-7728-1642-8\\nHans-Paul Schwefel (1974), Numerische Optimierung von Computer-Modellen (PhD thesis). Reprinted by Birkh\\u00e4user (1977).\\nHans-Paul Schwefel (1995), Evolution and Optimum Seeking. Wiley & Sons, New York. ISBN 0-471-57148-2\\nSimon, D. (2013), Evolutionary Optimization Algorithms Archived 2014-03-10 at the Wayback Machine, Wiley & Sons, ISBN 978-0-470-93741-9\\nKruse, Rudolf; Borgelt, Christian; Klawonn, Frank; Moewes, Christian; Steinbrecher, Matthias; Held, Pascal (2013), Computational Intelligence: A Methodological Introduction. Springer, London. ISBN 978-1-4471-5012-1, doi:10.1007/978-1-4471-5013-8.\\nRahman, Rosshairy Abd.; Kendall, Graham; Ramli, Razamin; Jamari, Zainoddin; Ku-Mahamud, Ku Ruhana (2017). \\\"Shrimp Feed Formulation via Evolutionary Algorithm with Power Heuristics for Handling Constraints\\\". Complexity. 2017: 1\\u201312. doi:10.1155/2017/7053710.\"\n  ],\n  \"evolutionary_algorithm_chunk_13\": [\n    \"External links\\nAn Overview of the History and Flavors of Evolutionary Algorithms\",\n    \"Entity: history-of-evolutionary-algorithms, Description:  Evolutionary algorithms have a history;\",\n    \"Entity: flavors-of-evolutionary-algorithms, Description:  Evolutionary algorithms have different flavors;\",\n    \"Entity: evolutionary-algorithms, Description:  Evolutionary algorithms have different flavors;\"\n  ],\n  \"yoshua_bengio_chunk_3\": [\n    \"Speaking with the Financial Times in May 2023, Bengio said that he supported the monitoring of access to AI systems such as ChatGPT so that potentially illegal or dangerous uses could be tracked.  In July 2023, he published a piece in The Economist arguing that \\\"the risk of catastrophe is real enough that action is needed now.\\\"\\nBengio co-authored a letter with Geoffrey Hinton and others in support of SB 1047, a California AI safety bill that would require companies training models which cost more than $100 million to perform risk assessments before deployment. They claimed the legislation was the \\\"bare minimum for effective regulation of this technology.\\\"\\nIn June 2025, Bengio expressed concern that some advanced AI systems were beginning to display traits such as deception, reward hacking, and situational awareness. He described these as indications of goal misalignment and potentially dangerous behaviors. In a Fortune article, he stated that the AI arms race was encouraging companies to prioritize capability improvements over safety research. He has also voiced support for strong regulation and international collaboration to address risks posed by advanced AI systems. In December 2025, Bengio said that granting rights to AI systems would be a \\\"huge mistake\\\", arguing that being able to shut them down is essential for safety.\"\n  ],\n  \"alphafold_chunk_3\": [\n    \"Background\\nProteins consist of chains of amino acids which spontaneously fold to form the three dimensional (3-D) structures of the proteins. The 3-D structure is crucial to understanding the biological function of the protein.\\nProtein structures can be determined experimentally through techniques such as X-ray crystallography, cryo-electron microscopy and nuclear magnetic resonance (NMR), which are all expensive and time-consuming. Such efforts, using the experimental methods, have identified the structures of about 170,000 proteins over the last 60 years, while there are over 200 million known proteins across all life forms.\\nOver the years, researchers have applied numerous computational methods to predict the 3D structures of proteins from their amino acid sequences, accuracy of such methods in best possible scenario is close to experimental techniques (NMR) by the use of homology modeling based on molecular evolution. CASP, which was launched in 1994 to challenge the scientific com",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1052,
+          "grading": {
+            "judge_pass": false,
+            "judge_reason": "The prediction incorrectly states that both Yoshua Bengio and Yann LeCun have worked at Google, when in fact only Geoffrey Hinton has done so."
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "multi_hop",
+      "question": "Which OpenAI co-founder was previously a PhD student of Geoffrey Hinton?",
+      "reference": "Ilya Sutskever was a PhD student of Geoffrey Hinton at the University of Toronto and co-authored AlexNet with Hinton and Alex Krizhevsky in 2012. Sutskever later co-founded OpenAI in 2015.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "The OpenAI co-founder who was previously a PhD student of Geoffrey Hinton is Ilya Sutskever.",
+          "prompt_tokens": 26,
+          "completion_tokens": 25,
+          "latency_ms": 155.2322000497952,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 51,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, which confirms Ilya Sutskever's PhD background under Geoffrey Hinton."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "Ilya Sutskever was a PhD student of Geoffrey Hinton at the University of Toronto, and later worked with him at DNNResearch, a spinoff of Hinton's research group, which was acquired by Google.",
+          "prompt_tokens": 1498,
+          "completion_tokens": 48,
+          "latency_ms": 12214.450900035445,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "Title: Wojciech Zaremba\nCategory: modern_researchers_extended\nSource: Wikipedia\n\nWojciech Zaremba (born 30 November 1988) is a Polish computer scientist and co-founder of OpenAI (2016\u2013present). He initially led OpenAI's work on robotics, notably creating a robotic arm capable of solving a Rubik's Cube. When the team was dissolved in 2020, he began leading teams working on OpenAI's GPT models, GitHub Copilot, and Codex.",
+              "source": "wojciech_zaremba.txt",
+              "score": 0.587923154637588,
+              "metadata": {
+                "chunk_index": 0,
+                "document_id": 9253
+              }
+            },
+            {
+              "text": "Title: John Schulman\nCategory: modern_researchers_extended\nSource: Wikipedia\n\nJohn Schulman (born 1987 or 1988) is an American artificial intelligence researcher and co-founder of OpenAI. In August 2024, he announced he would be joining Anthropic. In February 2025, he announced he was leaving to join Thinking Machines Lab, where he is chief scientist.",
+              "source": "john_schulman.txt",
+              "score": 0.5637371942030891,
+              "metadata": {
+                "chunk_index": 0,
+                "document_id": 5016
+              }
+            },
+            {
+              "text": "Career and research\nIn 2012, Sutskever spent about two months as a postdoc with Andrew Ng at Stanford University. He then returned to the University of Toronto and joined Hinton's new research company DNNResearch, a spinoff of Hinton's research group. In 2013, Google acquired DNNResearch and hired Sutskever as a research scientist at Google Brain.\nAt Google Brain, Sutskever worked with Oriol Vinyals and Quoc Viet Le to create the sequence-to-sequence learning algorithm, and worked on TensorFlow. He is also one of the AlphaGo paper's many co-authors.\nAt the end of 2015, Sutskever left Google to become cofounder and chief scientist of the newly founded organization OpenAI.\nIn 2022, Sutskever tweeted, \"it may be that today's large neural networks are slightly conscious\", which triggered debates about AI consciousness. He is considered to have played a key role in the development of ChatGPT, and later in leading the research that led to reasoning models. He is credited with establishing OpenAI\u2019s scaling ethos. In 2023, he announced that he would co-lead OpenAI's new \"Superalignment\" project, which was trying to solve the alignment of superintelligences within four years. He wrote that even if superintelligence seems far off, it could happen this decade.\nSutskever was formerly one of the six board members of the nonprofit entity that controlled OpenAI. In November 2023, the board fired Sam Altman, saying that \"he was not consistently candid in his communications with the board\". He authored a 52-page memo that relied heavily on information from Mira Murati, accusing Altman of lying, manipulating executives, and fostering internal division. Sutskever submitted the memo to the board after months of tension and dissatisfaction with Altman's leadership style, and ultimately joined the board in voting for Altman's termination. In an all-hands company meeting shortly after the board meeting, Sutskever said that firing Altman was \"the board doing its duty\", but the next week, he expressed regret at having participated in Altman's ouster. Altman's firing and OpenAI's co-founder Greg Brockman's resignation led three senior researchers to resign from OpenAI. After that, Sutskever stepped down from the OpenAI board and was absent from OpenAI's office. Some sources suggested he was leading the team remotely, while others said he no longer had access to the team's work.\nIn May 2024, Sutskever announced his departure from OpenAI to focus on a new project that was \"very personally meaningful\" to him. His decision followed a turbulent period at OpenAI marked by leadership crises and internal debates about the direction of AI development and alignment protocols. Jan Leike, the other leader of the superalignment project, announced his departure hours later, citing an erosion of safety and trust in OpenAI's leadership.\nIn June 2024, Sutskever announced Safe Superintelligence Inc., a new company he founded with Daniel Gross and Daniel Levy with offices in Palo Alto and Tel Aviv. In contrast to OpenAI, which releases revenue-generating products, Sutskever said the new company's \"first product will be the safe superintelligence, and it will not do anything else up until then\". In September 2024, the company announced that it had raised $1 billion from venture capital firms including Andreessen Horowitz, Sequoia Capital, DST Global, and SV Angel. In March 2025, Safe Superintelligence Inc. raised $2 billion more and reportedly reached a $32 billion valuation, notably due to Sutskever's reputation. In June 2025, SSI rejected an offer from Meta Platforms to buy the company. Sutskever became CEO of SSI shortly thereafter, after co-founder and CEO Gross left for Meta.\nIn an October 2024 interview after winning the Nobel Prize in Physics, Geoffrey Hinton expressed support for Sutskever's decision to fire Altman, emphasizing concerns about AI safety.",
+              "source": "ilya_sutskever.txt",
+              "score": 0.5462768214200615,
+              "metadata": {
+                "chunk_index": 2,
+                "document_id": 4542
+              }
+            },
+            {
+              "text": "Title: Greg Brockman\nCategory: modern_researchers_extended\nSource: Wikipedia\n\nGregory Brockman (born November 29, 1987) is an American entrepreneur and software engineer. He is co-founder and president of OpenAI. He began his career at Stripe in 2010, upon leaving MIT, and became CTO in 2013. He left Stripe in 2015 to co-found OpenAI, where he also served as CTO.\n\nEarly life\nBrockman was born in Thompson, North Dakota, and attended Red River High School, where he excelled in mathematics, chemistry, and computer science. He won a silver medal in the 2006 International Chemistry Olympiad and became the first finalist from North Dakota to participate in the Intel science talent search since 1973. In 2003, 2005, and 2007, he attended Canada/USA Mathcamp, a summer program for mathematically talented high-school students. In 2008, Brockman enrolled at Harvard University but left a year later, briefly enrolling at the Massachusetts Institute of Technology.",
+              "source": "greg_brockman.txt",
+              "score": 0.5339628425387355,
+              "metadata": {
+                "chunk_index": 0,
+                "document_id": 4158
+              }
+            },
+            {
+              "text": "Education\nHinton was born on 6 December 1947 in Wimbledon in the United Kingdom and was educated at Clifton College in Bristol. In 1967, he matriculated as an undergraduate student at King's College, Cambridge and, after switching between different fields such as natural sciences, history of art, and philosophy, eventually graduated with a Bachelor of Arts in experimental psychology in 1970. He spent a year apprenticing carpentry before returning to academic studies. From 1972 to 1975, he continued his study at the University of Edinburgh, where he was awarded a PhD in artificial intelligence in 1978 for research supervised by Christopher Longuet-Higgins, who favored the symbolic AI approach over the neural network approach.",
+              "source": "geoffrey_hinton.txt",
+              "score": 0.5326184885344845,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 3937
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1546,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction accurately states that Ilya Sutskever was a PhD student of Geoffrey Hinton at the University of Toronto, which matches the reference."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "The OpenAI co-founder who was previously a PhD student of Geoffrey Hinton is Ilya Sutskever.",
+          "prompt_tokens": 882,
+          "completion_tokens": 23,
+          "latency_ms": 15876.95290002739,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"sam_altman_chunk_8\": [\n    \"Altman testified before the United States Senate Judiciary Subcommittee on Privacy, Technology and the Law on May 16, 2023, about issues of AI oversight. After the success of ChatGPT, Altman made a world tour in May 2023, during which he visited 22 countries and met multiple leaders and diplomats, including British prime minister Rishi Sunak, French president Emmanuel Macron, Spanish prime minister Pedro S\\u00e1nchez, German chancellor Olaf Scholz, Indian prime minister Narendra Modi, South Korean president Yoon Suk-yeol, Israeli president Isaac Herzog, and European Commission president Ursula von der Leyen. Altman was named one of the 100 most influential people in the world by Time magazine. Altman stated that being CEO was fun until the release of ChatGPT; then the decisions became much more difficult.\\n\\nThe emergence of the Chinese AI company DeepSeek led major Chinese tech firms to embrace an open-source strategy, intensifying competition with OpenAI. Altman acknowledged the uncertainty regarding U.S. government approval for AI cooperation with China, but emphasized the importance of fostering dialogue between technological leaders in both nations.\"\n  ],\n  \"sam_altman_chunk_4\": [\n    \"Biotech\\nAltman has several other investments in companies including Humane, which was developing a wearable AI-powered device; Retro Biosciences, a research company aiming to extend human life by 10 years; Boom Technology, a supersonic airline developer; Cruise, a self-driving car company later acquired by General Motors; and Helion Energy, an American fusion research company.\\nDuring the COVID-19 pandemic, Altman helped fund and create Project Covalence to help researchers rapidly launch clinical trials in partnership with TrialSpark, a clinical trial startup. During the depositor run on Silicon Valley Bank in mid-March 2023, Altman provided capital to multiple startups. Altman invests in technology startups and nuclear energy companies. Some of his portfolio companies include Airbnb, Stripe, and Retro Biosciences. Along with Peter Thiel, Altman was an early seed investor in Minicircle, \\\"a longevity biotech company focused on developing gene therapies to extend human lifespans.\\\" He also invested in charter city projects Pr\\u00f3spera and Praxis, which have gotten additional financial support from author and former Coinbase CTO Balaji Srinivasan. Both cities have been linked by various publications and journalists to the Network State movement.\\n\\nReddit\\nFor eight days in 2014, Altman was the CEO of Reddit, a social media company, after CEO Yishan Wong resigned. On July 10, 2015, he announced the return of Steve Huffman as CEO. He remained on its board until 2022. Altman invested in multiple rounds of funding for Reddit (in 2014, 2015, and 2021). Prior to Reddit's initial public offering in 2024, Altman was listed as its third-largest shareholder, with around 9% ownership.\"\n  ],\n  \"sam_altman_chunk_10\": [\n    \"In May 2024, after OpenAI's non-disparagement agreements were exposed, Altman was accused of lying when claiming to have been unaware of the equity cancellation provision for departing employees who don't sign the agreement. Also in May, former board member Helen Toner explained the board's rationale for firing Altman in November 2023. She stated that Altman had withheld information, for example by not informing the board in advance of ChatGPT's release and by not disclosing his ownership of OpenAI's startup fund. She also alleged that two executives in OpenAI had reported \\\"psychological abuse\\\" from Altman, and provided screenshots and documentation to support their claims. She said that many employees feared retaliation if they didn't support Altman, and that when Altman was Loopt's CEO, the management team asked twice to fire him for what they called \\\"deceptive and chaotic behavior\\\".\"\n  ],\n  \"sam_altman_chunk_5\": [\n    \"Worldcoin\\nIn 2019, Altman co-founded the for-profit company Tools For Hu",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 905,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, accurately identifying Ilya Sutskever as the OpenAI co-founder who was previously a PhD student of Geoffrey Hinton."
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "category": "multi_hop",
+      "question": "Which architecture, developed by Google Brain, is the foundation for both GPT-4 and Google's Gemini?",
+      "reference": "The Transformer architecture, introduced by Google Brain in the 2017 paper 'Attention Is All You Need', underlies both OpenAI's GPT-4 and Google DeepMind's Gemini family of models.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "## Overview of Transformer Architecture\n\nThe Transformer architecture, developed by Google Brain, is a type of neural network specifically designed for natural language processing tasks. Introduced in the paper \"Attention Is All You Need\" by Vaswani et al. in 2017, the Transformer architecture revolutionized the field of NLP by providing a highly efficient and effective way to process sequential data.\n\n### Key Features of Transformer Architecture\n\nThe Transformer architecture is characterized by several key features:\n\n* **Self-Attention Mechanism**: The Transformer architecture relies heavily on self-attention mechanisms, which allow the model to weigh the importance of different input elements relative to each other. This is particularly useful for sequential data, such as text, where the relationships between different elements are crucial.\n* **Encoder-Decoder Structure**: The Transformer architecture consists of an encoder and a decoder. The encoder takes in a sequence of tokens (e.g., words or characters) and outputs a sequence of vectors. The decoder then generates the output sequence, one token at a time, based on the output vectors from the encoder.\n\n### GPT-4 and Gemini: Built on Transformer Architecture\n\nBoth GPT-4 and Google's Gemini are built on top of the Transformer architecture.\n\n* **GPT-4**: GPT-4, developed by OpenAI, is a large language model that uses the Transformer architecture to generate text. GPT-4 has achieved state-of-the-art results in various NLP tasks, including text generation, question-answering, and conversational dialogue.\n* **Gemini**: Gemini, developed by Google, is a large language model that also uses the Transformer architecture. Gemini is designed to be a more general-purpose model, capable of handling a wide range of tasks, including text generation, question-answering, and multimodal processing.\n\n### Conclusion\n\nIn conclusion, the Transformer architecture, developed by Google Brain, is the foundation for both GPT-4 and Google's Gemini. Its self-attention mechanism and encoder-decoder structure have made it a highly effective and efficient way to process sequential data, and its applications in NLP have been groundbreaking. By understanding the Transformer architecture and its applications in GPT-4 and Gemini, we can better appreciate the advancements in NLP and the potential for future innovations.",
+          "prompt_tokens": 31,
+          "completion_tokens": 448,
+          "latency_ms": 1119.3830000120215,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 479,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference and addresses the question, although it provides more detailed information about the Transformer architecture."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "The context does not provide information on the foundation architecture for GPT-4. However, it does mention that Gemini is powered by the family of large language models (LLMs) of the same name, and was previously based on LaMDA and PaLM 2. \n\nGPT-4 is not mentioned to be developed by Google, but rather OpenAI, and its architecture details are not provided in the context.",
+          "prompt_tokens": 1451,
+          "completion_tokens": 83,
+          "latency_ms": 16677.24290001206,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "Gemini (also known as Google Gemini and formerly known as Bard) is a generative artificial intelligence chatbot and virtual assistant developed by Google. It is powered by the family of large language models (LLMs) of the same name, after previously being based on LaMDA and PaLM 2.\nThe Gemini architecture is trained natively on multiple data types, allowing the models to process and generate text, computer code, images, audio, and video simultaneously. Google distributes the technology in varying capacities, ranging from efficient on-device versions (\"Nano\") and cost-effective, high-throughput variants (\"Flash\") to high-compute models designed for complex reasoning (\"Pro\" and \"Ultra\"). The 1.5 and 3 model generations introduced extended context windows, enabling the analysis of large datasets such as entire codebases, long-form videos, or extensive document archives in a single prompt.\nGemini was first announced on December 6, 2023, and replaced existing Google branding for AI services. In February 2024, the Bard chatbot was renamed Gemini, and the \"Duet AI\" branding for Google Cloud and Workspace was retired in favor of the Gemini identifier. The models integrate into the Google ecosystem through the Gemini mobile app, which functions as an overlay assistant on Android devices, and through the Vertex AI platform for third-party developers.\nThe release of Gemini has generated technical praise and public controversy. Commentators have highlighted the models' benchmarks in coding and retrieval tasks as competitive with OpenAI's GPT-4 and GPT-5. However, the product launch faced criticism regarding the reliability of its outputs. In early 2024, Google suspended the model's ability to generate images of people after users reported historical inaccuracies and bias in its depictions of human subjects. Subsequent updates, including the Gemini 1.5 and 3 series released throughout 2025, focused on reducing hallucinations, improving latency, and enhancing agentic capabilities for autonomous research and software development.",
+              "source": "gemini_chatbot.txt",
+              "score": 0.6351886984156608,
+              "metadata": {
+                "chunk_index": 0,
+                "document_id": 3766
+              }
+            },
+            {
+              "text": "Gemini\nGemini is a multimodal large language model which was released on 6 December 2023. It is the successor of Google's LaMDA and PaLM 2 language models and sought to challenge OpenAI's GPT-4. Gemini comes in 3 sizes: Nano, Pro, and Ultra. Gemini is also the name of the chatbot that integrates Google Gemini (and which was previously called Google Bard).\nOn 12 December 2024, Google released Gemini 2.0 Flash, the first model in the Gemini 2.0 series. It notably features expanded multimodality, with the ability to also generate images and audio, and is part of Google's broader plans to integrate advanced AI into autonomous agents.\nOn 25 March 2025, Google released Gemini 2.5, a reasoning model that stops to \"think\" before giving a response. Google announced that all future models will also have reasoning ability. On 30 March 2025, Google released Gemini 2.5 to all free users.\nOn 18 November 2025, Google released Gemini 3 Pro, a reasoning model which is fully multimodal. It was fully integrated with Google Search and AI Mode the same day.",
+              "source": "alphacode.txt",
+              "score": 0.6310189747658059,
+              "metadata": {
+                "chunk_index": 11,
+                "document_id": 930
+              }
+            },
+            {
+              "text": "Gemini\nGemini is a multimodal large language model which was released on 6 December 2023. It is the successor of Google's LaMDA and PaLM 2 language models and sought to challenge OpenAI's GPT-4. Gemini comes in 3 sizes: Nano, Pro, and Ultra. Gemini is also the name of the chatbot that integrates Google Gemini (and which was previously called Google Bard).\nOn 12 December 2024, Google released Gemini 2.0 Flash, the first model in the Gemini 2.0 series. It notably features expanded multimodality, with the ability to also generate images and audio, and is part of Google's broader plans to integrate advanced AI into autonomous agents.\nOn 25 March 2025, Google released Gemini 2.5, a reasoning model that stops to \"think\" before giving a response. Google announced that all future models will also have reasoning ability. On 30 March 2025, Google released Gemini 2.5 to all free users.\nOn 18 November 2025, Google released Gemini 3 Pro, a reasoning model which is fully multimodal. It was fully integrated with Google Search and AI Mode the same day.",
+              "source": "deepmind.txt",
+              "score": 0.6310189747658059,
+              "metadata": {
+                "chunk_index": 11,
+                "document_id": 2762
+              }
+            },
+            {
+              "text": "Consumer features and updates\nOriginally introduced by Google in August 2024, Gemini Live debuted on the Pixel 9 series as the default virtual assistant, replacing the Google Assistant on those devices. It was later rolled out to Samsung Galaxy devices beginning with the Galaxy S25 series in July 2025, and subsequently expanded to models including the Z Fold 7 and Z Flip 7, where it became part of the Galaxy AI suite.\nIn February 2025, Google introduced a feature for Gemini Advanced subscribers that enables the assistant to recall and reference past conversations.\nIn June 2025, Google announced Gemini CLI, an open-source AI agent for use in computer terminals. At the same time, Google introduced a new Gemini logo with more rounded sparkles and a color scheme aligned with the updated Google logo.",
+              "source": "gemini_chatbot.txt",
+              "score": 0.6014517063118225,
+              "metadata": {
+                "chunk_index": 7,
+                "document_id": 3773
+              }
+            },
+            {
+              "text": "Gemini\nRebranding\nOn December 6, 2023, Google announced Gemini, a larger, multimodal LLM. A specially tuned version of the mid-tier Gemini Pro was integrated into Bard, while the larger Gemini Ultra was used for \"Bard Advanced\" in 2024. The Wall Street Journal reported that Bard was then averaging around 220 million monthly visitors. Google ended its contract with Appen in January 2024, while image generation was added to Bard the next month, using Google Brain's Imagen 2 text-to-image model.\nOn February 8, 2024, Bard and Duet AI were unified under the Gemini brand, with a mobile app launched on Android and the service integrated into the Google app on iOS. On Android, users who downloaded the app saw Gemini replace Assistant as their device's default virtual assistant, though Assistant remained a standalone service. Google also launched \"Gemini Advanced with Ultra 1.0\", available via a \"Google One AI Premium\" subscription, incorporated Gemini into its Messages app on Android, and announced a partnership with Stack Overflow.\nGemini again took center stage at the 2024 Google I/O keynote. Google announced that Gemini would be integrated into several products, including Android, Chrome, Photos, and Workspace. Gemini Advanced was upgraded to the \"Gemini 1.5 Pro\" language model, with Google previewing Gemini Live, a voice chat mode, and Gems, the ability to create custom chatbots.",
+              "source": "gemini_chatbot.txt",
+              "score": 0.5877312782412508,
+              "metadata": {
+                "chunk_index": 5,
+                "document_id": 3771
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1534,
+          "grading": {
+            "judge_pass": false,
+            "judge_reason": "The prediction contradicts the reference by stating that GPT-4 is not developed by Google, which is not the main issue, but also fails to identify the correct architecture for both GPT-4 and Gemini."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "The architecture developed by Google Brain that serves as the foundation for both GPT-4 and Google's Gemini is the **Transformer**.\n\nThe Transformer architecture, introduced in the paper \"Attention Is All You Need\" by Vaswani et al., revolutionized the field of natural language processing (NLP) and has been widely adopted for various large language models. While GPT-4 was developed by OpenAI, and Gemini by Google, both models leverage the Transformer architecture for their operations.",
+          "prompt_tokens": 914,
+          "completion_tokens": 98,
+          "latency_ms": 13727.554899989627,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"google_brain_chunk_6\": [\n    \"Interactive Speaker Recognition with Reinforcement Learning\\nIn 2020, Google Brain Team and University of Lille presented a model for automatic speaker recognition which they called Interactive Speaker Recognition. The ISR module recognizes a speaker from a given list of speakers only by requesting a few user specific words. The model can be altered to choose speech segments in the context of Text-To-Speech Training. It can also prevent malicious voice generators from accessing the data.\\n\\nTensorFlow\\nTensorFlow is an open source software library powered by Google Brain that allows anyone to utilize machine learning by providing the tools to train one's own neural network. The tool has been used to develop software using deep learning models that farmers use to reduce the amount of manual labor required to sort their yield, by training it with a data set of human-sorted images.\\n\\nMagenta\\nMagenta is a project that uses Google Brain to create new information in the form of art and music rather than classify and sort existing data. TensorFlow was updated with a suite of tools for users to guide the neural network to create images and music. However, the team from Valdosta State University found that the AI struggles to perfectly replicate human intention in artistry, similar to the issues faced in translation.\\n\\nMedical applications\\nThe image sorting capabilities of Google Brain have been used to help detect certain medical conditions by seeking out patterns that human doctors may not notice to provide an earlier diagnosis. During screening for breast cancer, this method was found to have one quarter the false positive rate of human pathologists, who require more time to look over each photo and cannot spend their entire focus on this one task. Due to the neural network's very specific training for a single task, it cannot identify other afflictions present in a photo that a human could easily spot.\"\n  ],\n  \"google_brain_chunk_1\": [\n    \"Team and location\\nGoogle Brain was initially established by Google Fellow Jeff Dean and visiting Stanford professor Andrew Ng. In 2014, the team included Jeff Dean, Quoc V. Le, Ilya Sutskever, Alex Krizhevsky, Samy Bengio, and Vincent Vanhoucke. In 2017, team members included Anelia Angelova, Samy Bengio, Greg Corrado, George Dahl, Michael Isard, Anjuli Kannan, Hugo Larochelle, Chris Olah, Salih Edneer, Benoit Steiner, Vincent Vanhoucke, Vijay Vasudevan, and Fernanda Viegas. Chris Lattner, who created Apple's programming language Swift and then ran Tesla's autonomy team for six months, joined Google Brain's team in August 2017. Lattner left the team in January 2020 and joined SiFive.\\nAs of 2021, Google Brain was led by Jeff Dean, Geoffrey Hinton, and Zoubin Ghahramani. Other members include Katherine Heller, Pi-Chuan Chang, Ian Simon, Jean-Philippe Vert, Nevena Lazic, Anelia Angelova, Lukasz Kaiser, Carrie Jun Cai, Eric Breck, Ruoming Pang, Carlos Riquelme, Hugo Larochelle, and David Ha. Samy Bengio left the team in April 2021, and Zoubin Ghahramani took on his responsibilities.\\nGoogle Research includes Google Brain and is based in Mountain View. It also has satellite groups in Accra, Amsterdam, Atlanta,  Beijing, Berlin, Cambridge, Israel, Los Angeles, London, Montreal, Munich, New York City, Paris, Pittsburgh, Princeton, San Francisco, Seattle, Tokyo, Toronto, and Zurich.\"\n  ],\n  \"imagen_text_to_image_model_chunk_0\": [\n    \"Title: Imagen (text-to-image model)\\nCategory: products_extended\\nSource: Wikipedia\\n\\nImagen is a series of text-to-image models developed by Google DeepMind. They were developed by Google Brain until the company's merger with DeepMind in April 2023. Imagen is primarily used to generate images from text prompts, similar to Stability AI's Stable Diffusion, OpenAI's DALL-E, or Midjourney.\\nThe original version of the model was first discussed in a paper from May 2022. The tool produces high-quality images and is available to all user",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1012,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction accurately identifies the Transformer architecture as the foundation for both GPT-4 and Google's Gemini, consistent with the reference."
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "category": "multi_hop",
+      "question": "Name a connection between DeepMind's AlphaFold and a Nobel Prize.",
+      "reference": "Demis Hassabis, co-founder of DeepMind, shared the 2024 Nobel Prize in Chemistry in part for AlphaFold's protein-structure predictions.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "A connection between DeepMind's AlphaFold and a Nobel Prize is that AlphaFold's prediction of protein structures relates to the work recognized by the 1962 Nobel Prize in Physiology or Medicine. That prize was awarded to Francis Crick, James Watson, and Rosalind Franklin for their work on the structure of DNA.\n\nSimilarly, understanding the 3D structure of proteins, which AlphaFold predicts with high accuracy, is crucial for understanding their functions and interactions within living organisms. Therefore, the innovation behind AlphaFold has implications for advancing structural biology and, by extension, contributes to a deeper understanding of biological processes akin to the impact of the Nobel Prize-winning DNA structure discovery.",
+          "prompt_tokens": 24,
+          "completion_tokens": 135,
+          "latency_ms": 500.4649000475183,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 159,
+          "grading": {
+            "judge_pass": false,
+            "judge_reason": "The prediction incorrectly states that AlphaFold's connection to a Nobel Prize is related to the 1962 Nobel Prize in Physiology or Medicine, when in fact it is related to the 2024 Nobel Prize in Chemistry."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "In October 2024, Demis Hassabis and John Jumper received half of the 2024 Nobel Prize in Chemistry jointly for protein structure prediction, citing AlphaFold2 achievement.",
+          "prompt_tokens": 1117,
+          "completion_tokens": 38,
+          "latency_ms": 16552.864499972202,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "Protein folding\nIn 2016, DeepMind turned its artificial intelligence to protein folding, a long-standing problem in molecular biology. In December 2018, DeepMind's AlphaFold won the 13th Critical Assessment of Techniques for Protein Structure Prediction (CASP) by successfully predicting the most accurate structure for 25 out of 43 proteins. \"This is a lighthouse project, our first major investment in terms of people and resources into a fundamental, very important, real-world scientific problem,\" Hassabis said to The Guardian. In 2020, in the 14th CASP, AlphaFold's predictions achieved an accuracy score regarded as comparable with lab techniques. Andriy Kryshtafovych, one of the panel of scientific adjudicators, described the achievement as \"truly remarkable\", and said the problem of predicting how proteins fold had been \"largely solved\".\nIn July 2021, the open-source RoseTTAFold and AlphaFold2 were released to allow scientists to run their own versions of the tools. A week later DeepMind announced that AlphaFold had completed its prediction of nearly all human proteins as well as the entire proteomes of 20 other widely studied organisms. The structures were released on the AlphaFold Protein Structure Database. In July 2022, it was announced that the predictions of over 200 million proteins, representing virtually all known proteins, would be released on the AlphaFold database.\nThe most recent update, AlphaFold3, was released in May 2024, predicting the interactions of proteins with DNA, RNA, and various other molecules. In a particular benchmark test on the problem of DNA interactions, AlphaFold3's attained an accuracy of 65%, significantly improving the previous state of the art of 28%.\nIn October 2024, Hassabis and John Jumper received half of the 2024 Nobel Prize in Chemistry jointly for protein structure prediction, citing AlphaFold2 achievement.",
+              "source": "alphacode.txt",
+              "score": 0.5870060736000414,
+              "metadata": {
+                "chunk_index": 8,
+                "document_id": 927
+              }
+            },
+            {
+              "text": "Protein folding\nIn 2016, DeepMind turned its artificial intelligence to protein folding, a long-standing problem in molecular biology. In December 2018, DeepMind's AlphaFold won the 13th Critical Assessment of Techniques for Protein Structure Prediction (CASP) by successfully predicting the most accurate structure for 25 out of 43 proteins. \"This is a lighthouse project, our first major investment in terms of people and resources into a fundamental, very important, real-world scientific problem,\" Hassabis said to The Guardian. In 2020, in the 14th CASP, AlphaFold's predictions achieved an accuracy score regarded as comparable with lab techniques. Andriy Kryshtafovych, one of the panel of scientific adjudicators, described the achievement as \"truly remarkable\", and said the problem of predicting how proteins fold had been \"largely solved\".\nIn July 2021, the open-source RoseTTAFold and AlphaFold2 were released to allow scientists to run their own versions of the tools. A week later DeepMind announced that AlphaFold had completed its prediction of nearly all human proteins as well as the entire proteomes of 20 other widely studied organisms. The structures were released on the AlphaFold Protein Structure Database. In July 2022, it was announced that the predictions of over 200 million proteins, representing virtually all known proteins, would be released on the AlphaFold database.\nThe most recent update, AlphaFold3, was released in May 2024, predicting the interactions of proteins with DNA, RNA, and various other molecules. In a particular benchmark test on the problem of DNA interactions, AlphaFold3's attained an accuracy of 65%, significantly improving the previous state of the art of 28%.\nIn October 2024, Hassabis and John Jumper received half of the 2024 Nobel Prize in Chemistry jointly for protein structure prediction, citing AlphaFold2 achievement.",
+              "source": "deepmind.txt",
+              "score": 0.5870060736000414,
+              "metadata": {
+                "chunk_index": 8,
+                "document_id": 2759
+              }
+            },
+            {
+              "text": "2024 Nobel Prizes\nIn 2024, the Royal Swedish Academy of Sciences awarded Nobel Prizes in recognition of groundbreaking contributions to artificial intelligence. The recipients included:\n\nIn physics: John Hopfield for his work on physics-inspired Hopfield networks, and Geoffrey Hinton for foundational contributions to Boltzmann machines and deep learning.\nIn chemistry: David Baker, Demis Hassabis, and John Jumper for their advancements in protein folding predictions. See AlphaFold.",
+              "source": "history_of_artificial_intelligence.txt",
+              "score": 0.5763786701374317,
+              "metadata": {
+                "chunk_index": 54,
+                "document_id": 4373
+              }
+            },
+            {
+              "text": "Products and technologies\nAs of 2020, DeepMind has published over a thousand papers, including thirteen papers that were accepted by Nature or Science. DeepMind received media attention during the AlphaGo period; according to a LexisNexis search, 1842 published news stories mentioned DeepMind in 2016, declining to 1363 in 2019.",
+              "source": "alphacode.txt",
+              "score": 0.5616705573256836,
+              "metadata": {
+                "chunk_index": 3,
+                "document_id": 922
+              }
+            },
+            {
+              "text": "Products and technologies\nAs of 2020, DeepMind has published over a thousand papers, including thirteen papers that were accepted by Nature or Science. DeepMind received media attention during the AlphaGo period; according to a LexisNexis search, 1842 published news stories mentioned DeepMind in 2016, declining to 1363 in 2019.",
+              "source": "deepmind.txt",
+              "score": 0.5616705573256836,
+              "metadata": {
+                "chunk_index": 3,
+                "document_id": 2754
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1155,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction is factually consistent with the reference, although it provides more specific details about the award recipients."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "## Connection Between DeepMind's AlphaFold and a Nobel Prize\n\nThe connection between DeepMind's AlphaFold and a Nobel Prize lies in the impact of AlphaFold on the field of protein structure prediction. While there isn't a direct award of a Nobel Prize to AlphaFold or its creators mentioned, the work of AlphaFold's leaders has been recognized. Specifically, Demis Hassabis, the co-founder and CEO of DeepMind, was awarded the 2022 Breakthrough Prize in Life Sciences for his work on AlphaFold.\n\n### Relevant Contexts\n- The 2024 Nobel Prize in Chemistry was awarded to Demis Hassabis and John Jumper, leaders of the AlphaFold project, for their work on protein structure prediction.\n- Previous Nobel Prizes in Chemistry, such as those awarded in 1962 and 1988, recognized work on protein structures, which is a field significantly advanced by AlphaFold.\n\n### Conclusion\nThe achievements of AlphaFold in protein structure prediction have drawn comparisons to previous Nobel Prize-winning work in related fields, highlighting the significance of AlphaFold's contributions to structural biology.",
+          "prompt_tokens": 932,
+          "completion_tokens": 220,
+          "latency_ms": 13880.053400003817,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"alphafold_chunk_4\": [\n    \"AlphaFold 1 (2018)\\nAlphaFold 1 (2018) was built on work developed by various teams in the 2010s, work that looked at the large databases of related protein sequences now available from many different organisms (most without known 3D structures), to try to find changes at different residues (peptides) that appeared to be correlated, even though the residues were not consecutive in the main chain. Such correlations suggest that the residues may be close to each other physically, even though not close in the sequence, allowing a contact map to be estimated. Building on recent work prior to 2018, AlphaFold 1 extended this by estimating a probability distribution for the distances between residues, effectively transforming the contact map into a distance map. It also used more advanced learning methods than previously to develop the inference. The code was not made publicly available, except to run on sequences of proteins in the 2018 CASP competition.\"\n  ],\n  \"alphafold_chunk_19\": [\n    \"Published works\\nAndrew W. Senior et al. (December 2019), \\\"Protein structure prediction using multiple deep neural networks in the 13th Critical Assessment of Protein Structure Prediction (CASP13)\\\", Proteins: Structure, Function, Bioinformatics 87(12) 1141\\u20131148 doi:10.1002/prot.25834\\nAndrew W. Senior et al. (15 January 2020), \\\"Improved protein structure prediction using potentials from deep learning\\\", Nature 577 706\\u2013710 doi:10.1038/s41586-019-1923-7\\nJohn Jumper et al. (December 2020), \\\"High Accuracy Protein Structure Prediction Using Deep Learning\\\", in Fourteenth Critical Assessment of Techniques for Protein Structure Prediction (Abstract Book), pp. 22\\u201324\\nJohn Jumper et al. (December 2020), \\\"AlphaFold 2\\\". Presentation given at CASP 14.\\nAbramson, J., Adler, J., Dunger, J. et al. (May 2024), \\\"Accurate structure prediction of biomolecular interactions with AlphaFold 3\\\", Nature 630, 493\\u2013500 (2024)\\n\\nSee also\\nReferences\\nFurther reading\\nCarlos Outeiral, CASP14: what Google DeepMind's AlphaFold 2 really achieved, and what it means for protein folding, biology and bioinformatics, Oxford Protein Informatics Group. (3 December)\\nMohammed AlQuraishi, AlphaFold2 @ CASP14: \\\"It feels like one's child has left home.\\\" (blog), 8 December 2020\\nMohammed AlQuraishi, The AlphaFold2 Method Paper: A Fount of Good Ideas (blog), 25 July 2021\\n\\nExternal links\\nAlphaFold-3 web server\\nAlphaFold v2.1 code and links to model on GitHub\\nOpen access to protein structure predictions for the human proteome and 20 other key organisms at European Bioinformatics Institute (AlphaFold Protein Structure Database)\\nCASP 14 website\\nAlphaFold: The making of a scientific breakthrough, DeepMind, via YouTube.\\nColabFold, version for homooligomeric prediction and complexes\"\n  ],\n  \"alphafold_chunk_17\": [\n    \"General\\nIn the algorithm, the residues are moved freely, without any restraints. Therefore, during modeling the integrity of the chain is not maintained. As a result, AlphaFold may produce topologically wrong results, like structures with an arbitrary number of knots. (The study uses AlphaFold 2.3.2.)\\nThe model relies, to some extent, on co-evolutionary information from similar proteins. Therefore, it may not perform as well on synthetic proteins or proteins with very low homology to those in the training database. Benchmarks support this limitation: when applied to naturally evolved de novo proteins, AlphaFold2 often yields low-confidence and predictor-dependent models, and protein language model\\u2013based (alignment-free) structure predictors can perform better for orphan proteins than AlphaFold2. More broadly, comparative analyses show that structure/disorder predictors (including AlphaFold2 and ESMFold) behave differently on de novo and random-sequence proteins than on conserved proteins, and that confidence metrics can show different relationships with predicted disorder in these sequence classes.\\nThe mo",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1152,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction addresses the connection between AlphaFold and a Nobel Prize, but does not mention the specific year of the Nobel Prize awarded to Demis Hassabis and John Jumper."
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "category": "synthesis",
+      "question": "How does GraphRAG differ from Basic RAG, and why does it matter for token efficiency?",
+      "reference": "Basic RAG retrieves text chunks similar to a query via vector embeddings and feeds those chunks into the LLM. GraphRAG additionally builds a knowledge graph of entities and relationships, enabling multi-hop reasoning and a more focused, smaller context. This typically reduces the number of tokens sent to the LLM at equivalent or better answer accuracy.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "GraphRAG and Basic RAG are two different approaches used in the context of Retrieval-Augmented Generation (RAG) systems. While Basic RAG focuses on retrieving relevant documents or information chunks based on a user's query and then generating a response, GraphRAG enhances this process by incorporating graph structures to organize and retrieve information.\n\n**Basic RAG:**\n\n1. **Simple Retrieval**: Basic RAG systems retrieve information based on direct matches or similarities between the query and the indexed documents or chunks.\n2. **Linear Processing**: The retrieved information is often processed linearly, which can lead to inefficiencies in handling complex queries or large volumes of data.\n\n**GraphRAG:**\n\n1. **Graph-Based Retrieval**: GraphRAG organizes information in a graph structure, where nodes represent chunks of information (or documents) and edges represent relationships between them. This allows for more nuanced and context-aware retrieval.\n2. **Network Analysis**: Queries are used to navigate the graph, retrieving not just directly relevant information but also contextually relevant information through graph traversal algorithms.\n\n**Key Differences and Implications for Token Efficiency:**\n\n1. **Contextual Understanding**: GraphRAG provides a deeper contextual understanding by considering the relationships between different pieces of information. This can lead to more accurate and comprehensive responses.\n\n2. **Efficient Information Retrieval**: By structuring information as a graph, GraphRAG can more efficiently identify relevant information, even in complex scenarios or large datasets, potentially reducing the number of tokens needed to be processed.\n\n3. **Reduced Data Redundancy**: The graph structure can help in minimizing redundancy by linking related information, thereby avoiding the retrieval of duplicate or highly similar information chunks.\n\n4. **Scalability and Flexibility**: GraphRAG systems can be more scalable and flexible, handling complex queries and large datasets more effectively. This scalability is crucial for applications requiring high levels of detail and context.\n\n5. **Token Efficiency**: Token efficiency refers to the ability to achieve the desired outcome (e.g., accurate and relevant responses) with a lower number of tokens. GraphRAG's ability to contextually understand and efficiently retrieve relevant information can lead to better token efficiency. This is because it can provide more targeted and comprehensive responses by leveraging the relationships in the graph, potentially reducing the need for processing or generating unnecessary tokens.\n\nIn summary, GraphRAG differs from Basic RAG by leveraging graph structures to improve the retrieval and generation process. This approach enhances contextual understanding, reduces data redundancy, and improves scalability and flexibility. For token efficiency, GraphRAG offers significant advantages by enabling more targeted and comprehensive responses, which can reduce the overall number of tokens required to achieve high-quality outcomes.",
+          "prompt_tokens": 30,
+          "completion_tokens": 531,
+          "latency_ms": 1430.8016000431962,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 561,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction accurately describes the key differences between GraphRAG and Basic RAG, including the use of graph structures for more nuanced and context-aware retrieval, and how this leads to improved token efficiency."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "GraphRAG differs from basic RAG in that it extends RAG with the use of a knowledge graph, allowing the model to connect disparate pieces of information, synthesize insights, and understand summarized semantic concepts over large data collections. This is in contrast to basic RAG, which integrates LLMs with document retrieval systems but does not utilize a knowledge graph.\n\nThe addition of a knowledge graph in GraphRAG enables the model to better understand relationships between different pieces of information, which can lead to improved token efficiency. By connecting disparate pieces of information and synthesizing insights, GraphRAG can generate more accurate and informative outputs, potentially requiring fewer tokens to convey the same amount of information. This can be particularly important for applications where token efficiency is crucial, such as in processing large datasets or in situations where communication needs to be brief.",
+          "prompt_tokens": 790,
+          "completion_tokens": 165,
+          "latency_ms": 16551.512799982447,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "GraphX\nGraphX is a distributed graph-processing framework on top of Apache Spark. Because it is based on RDDs, which are immutable, graphs are immutable and thus GraphX is unsuitable for graphs that need to be updated, let alone in a transactional manner like a graph database. GraphX provides two separate APIs for implementation of massively parallel algorithms (such as PageRank): a Pregel abstraction, and a more general MapReduce-style API. Unlike its predecessor Bagel, which was formally deprecated in Spark 1.6, GraphX has full support for property graphs (graphs where properties can be attached to edges and vertices).\nLike Apache Spark, GraphX initially started as a research project at UC Berkeley's AMPLab and Databricks, and was later donated to the Apache Software Foundation and the Spark project.\n\nLanguage support\nApache Spark has built-in support for Scala, Java, SQL, R, Python, and Swift with 3rd party support for the .NET CLR, Julia, and more.",
+              "source": "apache_spark.txt",
+              "score": 0.39026613954684625,
+              "metadata": {
+                "chunk_index": 7,
+                "document_id": 1076
+              }
+            },
+            {
+              "text": "GraphSAINT instead \nsamples subgraphs stochastically during training, constructing unbiased estimators for \nthe full graph loss GraphSAINT instead \nsamples subgraphs stochastically during training, constructing unbiased estimators for \nthe full graph loss Distributed frameworks such as \nDistDGL extend training to multi-machine settings, managing the \ninter-machine communication required for neighborhood aggregation when a graph's nodes \nare distributed across machines For tasks such as atomic simulations, a different bottleneck \narises: GNN architectures that model higher-order interactions between triplets or \nquadruplets of atoms are memory-intensive at the level of individual graphs, making \nstandard data parallelism \u2014 where each GPU processes a separate sample \u2014 \ninsufficient when individual graphs exceed single-device memory",
+              "source": "graph_neural_network.txt",
+              "score": 0.3676054640597291,
+              "metadata": {
+                "chunk_index": 33,
+                "document_id": 4125
+              }
+            },
+            {
+              "text": "Graph retrieval-augmented generation (GraphRAG)\nGraphRAG (coined by Microsoft Research) is a technique that extends RAG with the use of a knowledge graph to allow the model to connect disparate pieces of information, synthesize insights, and understand summarized semantic concepts over large data collections. It was shown to be effective on datasets like the Violent Incident Information from News Articles.\n\nUsing language models to generate prompts\nLLMs themselves can be used to compose prompts for LLMs. The automatic prompt engineer algorithm uses one LLM to beam search over prompts for another LLM:",
+              "source": "chain_of_thought_prompting.txt",
+              "score": 0.34110220776251793,
+              "metadata": {
+                "chunk_index": 14,
+                "document_id": 1940
+              }
+            },
+            {
+              "text": "Graph retrieval-augmented generation (GraphRAG)\nGraphRAG (coined by Microsoft Research) is a technique that extends RAG with the use of a knowledge graph to allow the model to connect disparate pieces of information, synthesize insights, and understand summarized semantic concepts over large data collections. It was shown to be effective on datasets like the Violent Incident Information from News Articles.\n\nUsing language models to generate prompts\nLLMs themselves can be used to compose prompts for LLMs. The automatic prompt engineer algorithm uses one LLM to beam search over prompts for another LLM:",
+              "source": "prompt_engineering.txt",
+              "score": 0.34110220776251793,
+              "metadata": {
+                "chunk_index": 14,
+                "document_id": 7195
+              }
+            },
+            {
+              "text": "Retrieval-augmented generation\nRetrieval-augmented generation (RAG) is an approach that integrates LLMs with document retrieval systems. Given a query, a document retriever is called to retrieve the most relevant documents. This is usually done by encoding the query and the documents into vectors, then finding the documents with vectors (usually stored in a vector database) most similar to the vector of the query. The LLM then generates an output based on both the query and context included from the retrieved documents.",
+              "source": "emergent_abilities_of_large_language_models.txt",
+              "score": 0.328322432320031,
+              "metadata": {
+                "chunk_index": 15,
+                "document_id": 3237
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 955,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction accurately describes the key differences between GraphRAG and Basic RAG, including the use of a knowledge graph and its impact on token efficiency."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "## GraphRAG vs Basic RAG: Understanding the Difference\n\nGraphRAG (Graph-based Retrieval, Augmentation, and Generation) and Basic RAG (Retrieval, Augmentation, and Generation) are two approaches used in information retrieval and generation tasks. The primary difference between them lies in their method of representing and utilizing knowledge.\n\n### Basic RAG\nBasic RAG relies on a more linear or flat representation of information. This approach may not effectively capture complex relationships between entities, potentially leading to less efficient processing and generation of text.\n\n### GraphRAG\nGraphRAG, on the other hand, utilizes a knowledge graph to represent relationships between concepts. A knowledge graph is a digital structure that represents knowledge as concepts and the relationships between them. This graph-based approach enables GraphRAG to better understand the context and relationships between different pieces of information.\n\n## Why GraphRAG Matters for Token Efficiency\n\nThe use of a knowledge graph in GraphRAG allows for more precise and relevant information retrieval. This is particularly important for token efficiency, as it enables:\n\n*   More nuanced understanding and generation of answers\n*   Precise retrieval and inference of information\n*   Reduced need for explicit details\n*   Conveying the same amount of information with fewer tokens\n\nBy optimizing context and reducing unnecessary information, GraphRAG can achieve better results with fewer tokens, making it more efficient.\n\n## Conclusion\n\nIn summary, GraphRAG differs from Basic RAG in its use of a knowledge graph to represent complex relationships between entities. This approach enhances token efficiency by enabling more precise and relevant information retrieval, reducing the need for explicit details, and conveying information with fewer tokens.",
+          "prompt_tokens": 753,
+          "completion_tokens": 336,
+          "latency_ms": 14821.487699984573,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"chain_of_thought_prompting_chunk_0\": [\n    \"Title: Chain-of-thought prompting\\nCategory: methods_architectures\\nSource: Wikipedia\\n\\nPrompt engineering is the process of structuring natural language inputs (known as prompts) to produce specified outputs from a generative artificial intelligence (GenAI) model. Context engineering is the related area of software engineering that focuses on the management of non-prompt contexts supplied to the GenAI model, such as metadata, API tools, and tokens.\\nIt can also be defined as the practice of designing and refining input instructions given to a generative AI model to produce more accurate, relevant, or useful outputs. Effective prompt engineering involves understanding how a model interprets language, and may include techniques such as few-shot prompting, chain-of-thought prompting, and role assignment. It is increasingly considered a skill for working with large language models (LLMs) in both research and professional contexts. \\nDuring the 2020s AI boom, prompt engineering became regarded as a business capability across corporations and industries. Employees with the title prompt engineer were hired to create prompts that would increase productivity and efficacy, although the individual title has since lost traction amid AI models that produce better prompts than humans and corporate training in prompting for general employees.  \\nCommon prompting techniques include multi-shot, chain-of-thought, and tree-of-thought prompting, as well as the use of assigning roles to the model. Automated prompt generation methods, such as retrieval-augmented generation (RAG), provide for greater accuracy and a wider scope of functions for prompt engineers. Prompt injection is a type of cybersecurity attack that targets machine learning models through malicious prompts.\"\n  ],\n  \"knowledge_graph_chunk_5\": [\n    \"Using a knowledge graph for reasoning over data\\nA knowledge graph formally represents semantics by describing entities and their relationships. Knowledge graphs may make use of ontologies as a schema layer. By doing this, they allow logical inference for retrieving implicit knowledge rather than only allowing queries requesting explicit knowledge.\\nIn order to allow the use of knowledge graphs in various machine learning tasks, several methods for deriving latent feature representations of entities and relations have been devised. These knowledge graph embeddings allow them to be connected to machine learning methods that require feature vectors like word embeddings. This can complement other estimates of conceptual similarity.\\nModels for generating useful knowledge graph embeddings are commonly the domain of graph neural networks (GNNs). GNNs are deep learning architectures that comprise edges and nodes, which correspond well to the entities and relationships of knowledge graphs. The topology and data structures afforded by GNNs provide a convenient domain for semi-supervised learning, wherein the network is trained to predict the value of a node embedding (provided a group of adjacent nodes and their edges) or edge (provided a pair of nodes). These tasks serve as fundamental abstractions for more complex tasks such as knowledge graph reasoning and alignment.\"\n  ],\n  \"knowledge_graph_chunk_3\": [\n    \"Definitions\\nThere is no single commonly accepted definition of a knowledge graph. Most definitions view the topic through a Semantic Web lens and include these features:\\n\\nFlexible relations among knowledge in topical domains: A knowledge graph (i) defines abstract classes and relations of entities in a schema, (ii) mainly describes real world entities and their interrelations, organized in a graph, (iii) allows for potentially interrelating arbitrary entities with each other, and (iv) covers various topical domains.\\nGeneral structure: A network of entities, their semantic types, properties, and relationships. To represent properties, categorical or numerical values are often used.\\nSup",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1089,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction accurately describes the key differences between GraphRAG and Basic RAG, including the use of a knowledge graph and its impact on token efficiency, and addresses the question in a comprehensive manner."
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "synthesis",
+      "question": "What training technique, used by both ChatGPT and Claude, was pioneered by OpenAI and DeepMind around 2017?",
+      "reference": "Reinforcement learning from human feedback (RLHF) was pioneered jointly by OpenAI and Google DeepMind in 2017 and is used to fine-tune large language models including ChatGPT, GPT-4, and Anthropic's Claude.",
+      "pipelines": [
+        {
+          "pipeline": "llm_only",
+          "answer": "The training technique you're referring to is likely Reinforcement Learning from Human Feedback (RLHF). This technique was indeed pioneered by OpenAI and DeepMind around 2017.\n\nRLHF is a method for training language models to optimize their performance based on human feedback. The process involves:\n\n1. Initial training: The model is trained on a large dataset of text using standard supervised learning techniques.\n2. Human evaluation: Human evaluators assess the model's responses to various prompts, providing feedback on their quality, coherence, and relevance.\n3. Reward model training: A reward model is trained to predict the human evaluators' scores based on the model's responses.\n4. Reinforcement learning: The model is then fine-tuned using reinforcement learning, where it is optimized to maximize the reward signal from the reward model.\n\nBoth ChatGPT and Claude, as well as other language models, have utilized RLHF to improve their performance and alignment with human values. This technique has been instrumental in enabling language models to generate more accurate, informative, and engaging responses.",
+          "prompt_tokens": 36,
+          "completion_tokens": 207,
+          "latency_ms": 928.919100027997,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 243,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction accurately identifies the training technique as Reinforcement Learning from Human Feedback (RLHF) and correctly attributes its pioneering to OpenAI and DeepMind around 2017."
+          }
+        },
+        {
+          "pipeline": "basic_rag",
+          "answer": "The context does not mention Claude or a specific training technique pioneered by OpenAI and DeepMind around 2017. However, it does mention techniques such as supervised learning, reinforcement learning from human feedback (RLHF), and chain-of-thought reasoning used in ChatGPT. \n\nIf you provide more context or information about Claude, I may be able to give a more accurate answer.",
+          "prompt_tokens": 1771,
+          "completion_tokens": 78,
+          "latency_ms": 13057.07199999597,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "Task-specific models\nA foundational GPT model can be further adapted to produce more targeted systems directed to specific tasks and/or subject-matter domains. Methods for such adaptation can include additional fine-tuning (beyond that done for the foundation model) as well as certain forms of prompt engineering.\nAn important example of this is fine-tuning models to follow instructions, which is of course a fairly broad task but more targeted than a foundation model. In January 2022, OpenAI introduced \"InstructGPT\" \u2013 a series of models which were fine-tuned to follow instructions using a combination of supervised training and reinforcement learning from human feedback (RLHF) on base GPT-3 language models. Advantages this had over the bare foundational models included higher accuracy, less negative/toxic sentiment, and generally better alignment with user needs. Hence, OpenAI began using this as the basis for its API service offerings. Other instruction-tuned models have been released by others, including a fully open version.\nAnother (related) kind of task-specific models are chatbots, which engage in human-like conversation. In November 2022, OpenAI launched ChatGPT \u2013 an online chat interface powered by an instruction-tuned language model trained in a similar fashion to InstructGPT. They trained this model using RLHF, with human AI trainers providing conversations in which they played both the user and the AI, and mixed this new dialogue dataset with the InstructGPT dataset for a conversational format suitable for a chatbot. Other major chatbots currently include Microsoft's Bing Chat, which uses OpenAI's GPT-4 (as part of a broader close collaboration between OpenAI and Microsoft), and Google's competing chatbot Gemini (initially based on their LaMDA family of conversation-trained language models, with plans to switch to PaLM).\nYet another kind of task that a GPT can be used for is the meta-task of generating its own instructions, like developing a series of prompts for 'itself' to be able to effectuate a more general goal given by a human user. This is known as an AI agent, and more specifically a recursive one because it uses results from its previous self-instructions to help it form its subsequent prompts; the first major example of this was Auto-GPT (which uses OpenAI's GPT models), and others have since been developed as well.\nChain-of-thought reasoning is a prompting technique in which a language model generates intermediate reasoning steps before arriving at a final answer. This approach has been shown to improve performance on tasks requiring multi-step reasoning, such as mathematical problem solving and logical inference.\nBy producing step-by-step explanations, the model is able to decompose complex problems into smaller, more manageable parts. This technique is often used in conjunction with few-shot prompting, where examples demonstrating the reasoning process are included in the input.",
+              "source": "generative_pre_trained_transformer.txt",
+              "score": 0.5863514532975811,
+              "metadata": {
+                "chunk_index": 5,
+                "document_id": 3889
+              }
+            },
+            {
+              "text": "Background\nOpenAI introduced the first GPT model (GPT-1) in 2018, publishing a paper called \"Improving Language Understanding by Generative Pre-Training\", which was based on the transformer architecture and trained on a large corpus of books. The next year, they introduced GPT-2, a larger model that could generate coherent text.  In 2020, they introduced GPT-3, a model with over 100 times as many parameters as GPT-2. GPT-3 was further improved into GPT-3.5, which was used to create the chatbot product ChatGPT.",
+              "source": "gpt_4.txt",
+              "score": 0.5752259760927746,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 4039
+              }
+            },
+            {
+              "text": "Features\nChatGPT is a chatbot and AI assistant built on large language model (LLM) technology. It is designed to generate human-like text and can carry out a wide variety of tasks. These include, among many others, writing and debugging computer programs, composing music, scripts, fairy tales, and essays, answering questions (sometimes at a level exceeding that of an average human test-taker), and generating business concepts.\nChatGPT is frequently used for translation and summarization tasks, and can simulate interactive environments such as a Linux terminal, a multi-user chat room, or simple text-based games such as tic-tac-toe.\nUsers interact with ChatGPT through conversations which consist of text, audio, and image inputs and outputs. The user's inputs to these conversations are referred to as prompts. An optional \"Memory\" feature allows users to tell ChatGPT to memorize specific information. Another option allows ChatGPT to recall old conversations. GPT-based moderation classifiers are used to reduce the risk of harmful outputs being presented to users.\nIn March 2023, OpenAI added support for plugins for ChatGPT. This includes both plugins made by OpenAI, such as web browsing and code interpretation, and external plugins from developers such as Expedia, OpenTable, and Zapier.\nFrom October to December 2024, ChatGPT Search was deployed. It allows ChatGPT to search the web in an attempt to make more accurate and up-to-date responses. It increased OpenAI's direct competition with major search engines. OpenAI allows businesses to tailor how their content appears in the ChatGPT Search results and influence what sources are used.\nIn December 2024, OpenAI launched a new feature allowing users to call ChatGPT with a telephone for up to 15 minutes per month for free.\nIn September 2025, OpenAI added a feature called Pulse, which generates a daily analysis of a user's chats and connected apps such as Gmail and Google Calendar.\nIn October 2025, OpenAI launched ChatGPT Atlas, a browser integrating the ChatGPT assistant directly into web navigation, to compete with existing browsers such as Google Chrome. It has an additional feature called \"agentic mode\" that allows it to take online actions for the user.",
+              "source": "chatgpt.txt",
+              "score": 0.5568916331557622,
+              "metadata": {
+                "chunk_index": 1,
+                "document_id": 1948
+              }
+            },
+            {
+              "text": "Services\nProducts\nChatGPT\nChatGPT Deep Research\nChatGPT Search\nChatGPT Atlas\nOpenAI Codex\nSora (text-to-video model)\nWhisper (speech recognition system)\nAn API that gives access to various OpenAI models\n\nDevelopment\nIn February 2019, GPT-2 was announced, which gained attention for its ability to generate human-like text.\nIn 2020, OpenAI announced GPT-3, a language model trained on large internet datasets. GPT-3 is aimed at natural language answering questions, but it can also translate between languages and coherently generate improvised text. It also announced that an associated API, named the API, would form the heart of its first commercial product.\nEleven employees left OpenAI, mostly between December 2020 and January 2021, in order to establish Anthropic.\nIn 2021, OpenAI introduced DALL-E, a specialized deep learning model adept at generating complex digital images from textual descriptions, utilizing a variant of the GPT-3 architecture.",
+              "source": "openai.txt",
+              "score": 0.5494393527159314,
+              "metadata": {
+                "chunk_index": 10,
+                "document_id": 6694
+              }
+            },
+            {
+              "text": "Training\nChatGPT is based on GPT foundation models that have been fine-tuned for conversational assistance. The fine-tuning process involved supervised learning and reinforcement learning from human feedback (RLHF). During supervised learning, the trainers acted as both the user and the AI assistant. Reinforcement learning consisted of  human trainers ranking responses generated by the model in previous conversations. These rankings were used to create \"reward models\" that were used to fine-tune the model further by using several iterations of proximal policy optimization.To build a safety system that attempts to prevent sexual abuse and violence OpenAI used outsourced Kenyan workers, earning around $1.32 to $2 per hour, to label such content. These labels were used to train a model to detect such content in the future. The laborers were exposed to toxic and traumatic content, including child sexual abuse, zoophilia, murder, suicide, torture, self-harm, and incest. Richard Mathenge, a team leader, reported that as his team encountered such content, he could observe the psychological deterioration of his workers over the course of the project. Mophat Okinyi, a quality-assurance analyst on the same team, reported lasting insomnia, anxiety, depression, and panic attacks, and said the experience contributed to the breakdown of his marriage and mental health.\nOpenAI's outsourcing partner was Sama, a training-data company based in San Francisco, California.\nChatGPT users can opt-out of their chat data being used to train upcoming models.\nChatGPT's training data includes software manual pages, information about internet phenomena such as bulletin board systems, multiple programming languages, and the text of Wikipedia.",
+              "source": "chatgpt.txt",
+              "score": 0.5454511117959681,
+              "metadata": {
+                "chunk_index": 13,
+                "document_id": 1960
+              }
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1849,
+          "grading": {
+            "judge_pass": false,
+            "judge_reason": "The prediction does not directly address the question about the specific training technique pioneered by OpenAI and DeepMind around 2017, despite mentioning RLHF as a technique used in ChatGPT."
+          }
+        },
+        {
+          "pipeline": "graph_rag",
+          "answer": "### Training Technique Pioneered by OpenAI and DeepMind\n\nThe training technique used by both ChatGPT and Claude, which was pioneered by OpenAI and DeepMind around 2017, is **Reinforcement Learning from Human Feedback (RLHF)**.\n\n### Details\n- **Technique Name:** Reinforcement Learning from Human Feedback (RLHF)\n- **Pioneers:** OpenAI and DeepMind\n- **Year:** Around 2017\n- **Usage:** ChatGPT and Claude\n\nRLHF is a method that involves training AI models using feedback from human evaluators. This technique helps improve the model's performance and alignment with human values.\n\n### References\nNo specific image references are provided in the contexts.",
+          "prompt_tokens": 868,
+          "completion_tokens": 147,
+          "latency_ms": 16700.435300008394,
+          "cost_usd": 0.0,
+          "retrieved_chunks": [
+            {
+              "text": "{\n  \"inverse_reinforcement_learning_chunk_31\": [\n    \"Statistical comparison of reinforcement learning algorithms\\nEfficient comparison of RL algorithms is essential for research, deployment and monitoring of RL systems. To compare different algorithms on a given environment, an agent can be trained for each algorithm. Since the performance is sensitive to implementation details, all algorithms should be implemented as closely as possible to each other. After the training is finished, the agents can be run on a sample of test episodes, and their scores (returns) can be compared. Since episodes are typically assumed to be i.i.d, standard statistical tools can be used for hypothesis testing, such as T-test and permutation test. This requires to accumulate all the rewards within an episode into a single number\\u2014the episodic return. However, this causes a loss of information, as different time-steps are averaged together, possibly with different levels of noise. Whenever the noise level varies across the episode, the statistical power can be improved significantly, by weighting the rewards according to their estimated noise.\\n\\nChallenges and limitations\\nDespite significant advancements, reinforcement learning (RL) continues to face several challenges and limitations that hinder its widespread application in real-world scenarios.\\n\\nSample inefficiency\\nRL algorithms often require a large number of interactions with the environment to learn effective policies, leading to high computational costs and time-intensive to train the agent. For instance, OpenAI's Dota-playing bot utilized thousands of years of simulated gameplay to achieve human-level performance. Techniques like experience replay and curriculum learning have been proposed to deprive sample inefficiency, but these techniques add more complexity and are not always sufficient for real-world applications.\"\n  ],\n  \"chain_of_thought_prompting_chunk_9\": [\n    \"Using gradient descent to search for prompts\\nIn \\\"prefix-tuning\\\", \\\"prompt tuning\\\", or \\\"soft prompting\\\", floating-point vectors are searched directly by gradient descent to maximize the log-likelihood on outputs. An earlier result uses the same idea of gradient descent search, but is designed for masked language models like BERT, and searches only over token sequences, rather than numerical vectors. Formally, it searches for \\n  \\n    \\n      \\n        arg\\n        \\u2061\\n        \\n          max\\n          \\n            \\n              \\n                X\\n                ~\\n              \\n            \\n          \\n        \\n        \\n          \\u2211\\n          \\n            i\\n          \\n        \\n        log\\n        \\u2061\\n        P\\n        r\\n        [\\n        \\n          Y\\n          \\n            i\\n          \\n        \\n        \\n          |\\n        \\n        \\n          \\n            \\n              X\\n              ~\\n            \\n          \\n        \\n        \\u2217\\n        \\n          X\\n          \\n            i\\n          \\n        \\n        ]\\n      \\n    \\n    {\\\\displaystyle \\\\arg \\\\max _{\\\\tilde {X}}\\\\sum _{i}\\\\log Pr[Y^{i}|{\\\\tilde {X}}\\\\ast X^{i}]}\\n  \\n where \\n  \\n    \\n      \\n        \\n          \\n            \\n              X\\n              ~\\n            \\n          \\n        \\n      \\n    \\n    {\\\\displaystyle {\\\\tilde {X}}}\\n  \\n ranges over token sequences of a specified length.\"\n  ],\n  \"inverse_reinforcement_learning_chunk_32\": [\n    \"Stability and convergence issues\\nTraining RL models, particularly for deep neural network-based models, can be unstable and prone to divergence. A small change in the policy or environment can lead to extreme fluctuations in performance, making it difficult to achieve consistent results. This instability is further enhanced in the case of the continuous or high-dimensional action space, where the learning step becomes more complex and less predictable.\\n\\nGeneralization and transferability\\nThe RL agents trained in specific environments ofte",
+              "source": "graph",
+              "score": null,
+              "metadata": {}
+            }
+          ],
+          "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+          "error": null,
+          "total_tokens": 1015,
+          "grading": {
+            "judge_pass": true,
+            "judge_reason": "The prediction accurately reflects the reference answer, including the technique name, pioneers, year, and usage."
+          }
+        }
+      ]
+    }
+  ]
+}
