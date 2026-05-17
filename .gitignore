@@ -129,8 +129,10 @@ credentials/
 __pycache__/
 *.pdf
 
-# GraphRAG deployment secrets (the .example.json is committed; the real one is not)
+# GraphRAG deployment secrets (the .example.json is committed; the real one is not).
+# Snapshots copy this file too; never commit those copies either.
 infra/graphrag-deploy/configs/server_config.json
+snapshots/**/server_config.json
 
 # Dev scratch files at repo root (smoke tests, manual verify runs, etc.)
 # Canonical eval results live in backend/tests/, not here.
