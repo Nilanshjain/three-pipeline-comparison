@@ -213,7 +213,6 @@ function SavedResultsPanel({ entries, open, onToggle }) {
                           const f1c = m.bertscore_f1_rescaled_mean;
                           const judgePct = m.judge_pass_rate != null ? (m.judge_pass_rate * 100) : null;
                           const judgeMet = isGraph && judgePct != null && judgePct >= 90;
-                          const f1Met = isGraph && ((f1r != null && f1r >= 0.88) || (f1c != null && f1c >= 0.55));
                           return (
                             <tr key={name} className={`border-t border-metal-700 ${isGraph ? 'bg-amber-950/10' : ''}`}>
                               <td className="px-3 py-2">

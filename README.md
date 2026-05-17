@@ -135,9 +135,7 @@ infra/graphrag-deploy/        Docker-compose stack + Savanna config
 data/raw_articles/            432 Wikipedia AI/ML articles
 docs/
   architecture.md             Mermaid diagrams
-  blog_post.md                Long-form write-up
   tuning_results.md           26-config sweep
-  notes/                      Obsidian vault (development log)
 snapshots/                    Code + result JSONs at key milestones
 ```
 

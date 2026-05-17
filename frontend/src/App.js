@@ -3,13 +3,15 @@ import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
 import { Textarea } from './components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './components/ui/card';
-import { Upload, Send, FileText, Bot, User, Info, AlertCircle, Loader2, MessageSquare, BarChart3 } from 'lucide-react';
+import { Upload, Send, FileText, Bot, User, Info, AlertCircle, Loader2 } from 'lucide-react';
 import Compare from './pages/Compare';
 
 const API_BASE_URL = 'http://localhost:8000/api/v1';
 
 function App() {
-  const [view, setView] = useState('compare'); // 'compare' is the hackathon dashboard; 'chat' is a legacy pre-hackathon view kept for reference
+  // 'compare' is the hackathon dashboard; 'chat' is a legacy pre-hackathon view kept for reference.
+  // eslint-disable-next-line no-unused-vars
+  const [view, setView] = useState('compare');
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
