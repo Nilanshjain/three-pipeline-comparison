@@ -2,10 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../components/ui/button';
 import { Textarea } from '../components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/card';
-import { Send, Loader2, AlertCircle, Cpu, Database, Network, Trophy, Zap, DollarSign, CheckCircle2, FileQuestion } from 'lucide-react';
+import { Send, Loader2, AlertCircle, Cpu, Database, Network, Trophy, Zap, DollarSign, CheckCircle2, FileQuestion, Info } from 'lucide-react';
 
 // Backend port 8765 (avoids conflicts with the user's other local services on 8000/8001).
-const API_BASE_URL = 'http://localhost:8765/api/v1';
+// Configurable API base. Locally defaults to the dev backend; on deployed
+// static sites (e.g. Vercel) set REACT_APP_API_BASE_URL to your backend, or
+// leave unset and the dashboard will run in read-only "static mode" using
+// the bundled data files under /data/.
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8765/api/v1';
+// Pre-bundled fallbacks served as static assets from the React public/ dir.
+const STATIC_EVAL_QUESTIONS_URL = '/data/eval-questions.json';
+const STATIC_SAVED_RESULTS_URL = '/data/saved-results.json';
 
 const PIPELINE_META = {
   llm_only: {
@@ -445,28 +452,49 @@ export default function Compare() {
   // without running 14 live queries (avoids judge variance during demo).
   const [savedResults, setSavedResults] = useState([]);
   const [showSavedResults, setShowSavedResults] = useState(false);
+  // staticMode = true when the backend isn't reachable. We then serve the
+  // bundled data files for eval questions + saved results, and disable the
+  // live "Run benchmark" button with a notice.
+  const [staticMode, setStaticMode] = useState(false);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/benchmark/saved-results`)
-      .then((r) => (r.ok ? r.json() : []))
+    // Try the live backend first; fall back to the static JSON shipped with the build.
+    fetch(`${API_BASE_URL}/benchmark/saved-results`, { signal: AbortSignal.timeout(2500) })
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then(setSavedResults)
-      .catch(() => setSavedResults([]));
+      .catch(() => {
+        // Backend not reachable — switch to static mode and load the
+        // bundled aggregates from public/data/.
+        setStaticMode(true);
+        fetch(STATIC_SAVED_RESULTS_URL)
+          .then((r) => (r.ok ? r.json() : []))
+          .then(setSavedResults)
+          .catch(() => setSavedResults([]));
+      });
   }, []);
 
   useEffect(() => {
-    // Fetch curated eval set on mount. Failure is non-fatal — the panel
-    // just stays empty and the textarea still works for ad-hoc queries.
-    fetch(`${API_BASE_URL}/benchmark/eval-questions`)
-      .then((r) => (r.ok ? r.json() : []))
+    // Fetch curated eval set on mount. If the backend is unreachable, fall
+    // back to the bundled copy under /data/ so the deployed static site can
+    // still render the curated questions panel.
+    fetch(`${API_BASE_URL}/benchmark/eval-questions`, { signal: AbortSignal.timeout(2500) })
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then(setEvalQuestions)
-      .catch(() => setEvalQuestions([]));
+      .catch(() => {
+        fetch(STATIC_EVAL_QUESTIONS_URL)
+          .then((r) => (r.ok ? r.json() : []))
+          .then(setEvalQuestions)
+          .catch(() => setEvalQuestions([]));
+      });
   }, []);
 
   const pickEvalQuestion = (q) => {
     if (isRunning) return;
     setQuery(q.question);
     setActiveEvalQuestion(q);
-    // Auto-run so judges can click-through quickly without an extra step.
+    // In static mode there's no backend to query — just surface the
+    // reference answer and let the user browse the saved aggregates.
+    if (staticMode) return;
     setTimeout(() => runBenchmarkWith(q.question), 0);
   };
 
@@ -522,6 +550,23 @@ export default function Compare() {
 
   return (
     <div className="space-y-4">
+      {staticMode && (
+        <Card className="border-amber-700/50 bg-amber-950/15 shadow-2xl">
+          <CardContent className="py-3">
+            <div className="flex items-start gap-3 text-sm">
+              <Info className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+              <div className="text-amber-100">
+                <strong>Read-only mode.</strong> No live backend connected. Saved benchmark
+                results below are the same numbers from the full eval runs in the repo.
+                For live querying, follow the setup in the{' '}
+                <a href="https://github.com/Nilanshjain/DevRAG#running-it" target="_blank" rel="noreferrer" className="text-amber-300 underline">
+                  README
+                </a>{' '}— spin up the local stack and the dashboard becomes interactive.
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
       <Card className="border-metal-600 shadow-2xl">
         <CardHeader className="pb-3">
           <CardTitle className="text-base">Run a query</CardTitle>
@@ -542,9 +587,10 @@ export default function Compare() {
             />
             <Button
               onClick={runBenchmark}
-              disabled={!query.trim() || isRunning}
+              disabled={!query.trim() || isRunning || staticMode}
               size="lg"
               className="h-auto px-6"
+              title={staticMode ? 'Live querying requires the local backend — see README' : undefined}
             >
               {isRunning ? (
                 <>

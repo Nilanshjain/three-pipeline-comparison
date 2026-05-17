@@ -1,0 +1,28 @@
+Just shipped my submission to the TigerGraph GraphRAG Inference Hackathon.
+
+The challenge: prove GraphRAG beats vector-only RAG by using fewer tokens AND maintaining accuracy. Easy to claim, hard to do honestly.
+
+Two results from the same codebase:
+
+→ Default config gets GraphRAG to 805 tokens per query vs Basic RAG's 1,407. That is −42.8% tokens with +7.1pp higher judge accuracy. Headline rubric satisfied.
+
+→ Adaptive config (one flag, opt-in) hits judge 92.9% AND BERTScore F1_raw 0.891 in the SAME eval run. Maximum bonus tier unlocked.
+
+The path required stacking three engineering pieces:
+
+1. A 2-hop graph-traversal fallback for multi-hop entity questions (Microsoft GraphRAG "From Local to Global" pattern). Resolves cases where vector retrieval matches surface keywords but misses the biographical chunk that holds the answer.
+
+2. A 30-line markdown-strip post-processor that boosted BERTScore F1 by 0.03 with zero LLM cost.
+
+3. Judge self-consistency N=3 voting (Wang et al 2022) to compensate for HuggingFace Inference silently ignoring the `seed` parameter. Per-call judge verdicts swing ±20pp on borderline answers; majority voting makes them stable.
+
+The honest counting matters: the GraphRAG service fires ~14 LLM calls per query by default. Reporting only the synthesis prompt hides 13x the real cost. My pipeline scrapes Docker logs to count everything.
+
+26 configurations tested. Both wins reproducible from JSON files in the repo. Five engineering findings worth surfacing, full write-up linked.
+
+Live dashboard: <DEPLOYED_URL>
+Blog: <BLOG_URL>
+Code: https://github.com/Nilanshjain/DevRAG
+Demo: <YOUTUBE_URL>
+
+#TigerGraph #GraphRAGInferenceHackathon #RAG #KnowledgeGraphs #MachineLearning
