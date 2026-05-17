@@ -1,0 +1,84 @@
+[
+  {
+    "id": "C11",
+    "label": "Default config \u2014 Token-reduction winner",
+    "subtitle": "-42.8% tokens vs Basic RAG with +7.1pp higher judge accuracy",
+    "config": "method=community, top_k=1, with_chunk=True, combine=True \u2014 single LLM call",
+    "rubric": "Headline rubric (Token Reduction 30%): satisfied",
+    "file": "accuracy_results_C11_FINAL.json",
+    "summary": {
+      "llm_only": {
+        "judge_pass_rate": 0.7857142857142857,
+        "judge_n": 14,
+        "bertscore_f1_raw_mean": 0.8753642857142856,
+        "bertscore_f1_rescaled_mean": 0.2616071428571429,
+        "mean_total_tokens": 269.92857142857144,
+        "mean_latency_ms": 787.14793571271,
+        "n_questions": 14,
+        "n_errors": 0
+      },
+      "basic_rag": {
+        "judge_pass_rate": 0.6428571428571429,
+        "judge_n": 14,
+        "bertscore_f1_raw_mean": 0.8859785714285715,
+        "bertscore_f1_rescaled_mean": 0.32443571428571427,
+        "mean_total_tokens": 1407.357142857143,
+        "mean_latency_ms": 9650.450157151292,
+        "n_questions": 14,
+        "n_errors": 0
+      },
+      "graph_rag": {
+        "judge_pass_rate": 0.7142857142857143,
+        "judge_n": 14,
+        "bertscore_f1_raw_mean": 0.8632285714285715,
+        "bertscore_f1_rescaled_mean": 0.18964285714285717,
+        "mean_total_tokens": 805.2857142857143,
+        "mean_latency_ms": 9455.916764293632,
+        "n_questions": 14,
+        "n_errors": 0
+      }
+    },
+    "n_questions": 14
+  },
+  {
+    "id": "C26",
+    "label": "Adaptive config \u2014 Maximum Bonus Tier",
+    "subtitle": "judge 92.9% AND F1_raw 0.891 in the same eval run",
+    "config": "adaptive_fallback=true (2-hop graph traversal) + judge-consensus N=3",
+    "rubric": "Bonus tier: judge >= 90% AND F1_raw >= 0.88 both met",
+    "file": "accuracy_results_C26_FINAL.json",
+    "summary": {
+      "llm_only": {
+        "judge_pass_rate": 0.9285714285714286,
+        "judge_n": 14,
+        "bertscore_f1_raw_mean": 0.8754142857142859,
+        "bertscore_f1_rescaled_mean": 0.26184999999999997,
+        "mean_total_tokens": 277.5,
+        "mean_latency_ms": 808.2004428620816,
+        "n_questions": 14,
+        "n_errors": 0
+      },
+      "basic_rag": {
+        "judge_pass_rate": 0.5714285714285714,
+        "judge_n": 14,
+        "bertscore_f1_raw_mean": 0.8856428571428572,
+        "bertscore_f1_rescaled_mean": 0.32240714285714284,
+        "mean_total_tokens": 1410.5714285714287,
+        "mean_latency_ms": 10314.019692860062,
+        "n_questions": 14,
+        "n_errors": 0
+      },
+      "graph_rag": {
+        "judge_pass_rate": 0.9285714285714286,
+        "judge_n": 14,
+        "bertscore_f1_raw_mean": 0.8910214285714285,
+        "bertscore_f1_rescaled_mean": 0.3543,
+        "mean_total_tokens": 2499.5,
+        "mean_latency_ms": 21227.77716428183,
+        "n_questions": 14,
+        "n_errors": 0
+      }
+    },
+    "n_questions": 14
+  }
+]

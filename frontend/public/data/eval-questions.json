@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "category": "single_fact",
+    "question": "Who founded DeepMind, and in what year and city?",
+    "reference": "Demis Hassabis, Shane Legg, and Mustafa Suleyman co-founded DeepMind in London in 2010."
+  },
+  {
+    "id": 2,
+    "category": "single_fact",
+    "question": "What was AlexNet and who built it?",
+    "reference": "AlexNet was a convolutional neural network that won the 2012 ImageNet Large Scale Visual Recognition Challenge by a wide margin. It was built by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton at the University of Toronto."
+  },
+  {
+    "id": 3,
+    "category": "single_fact",
+    "question": "What architecture was introduced in the paper 'Attention Is All You Need', and which lab published it?",
+    "reference": "The Transformer architecture was introduced in the 2017 paper 'Attention Is All You Need' by Ashish Vaswani and colleagues at Google Brain."
+  },
+  {
+    "id": 4,
+    "category": "single_fact",
+    "question": "Who founded Anthropic and when?",
+    "reference": "Anthropic was founded in 2021 by Dario Amodei, Daniela Amodei, and other former OpenAI researchers, in San Francisco."
+  },
+  {
+    "id": 5,
+    "category": "multi_hop",
+    "question": "Which of the 2018 Turing Award co-recipients have worked at Google?",
+    "reference": "The 2018 Turing Award was shared by Geoffrey Hinton, Yann LeCun, and Yoshua Bengio. Of the three, Geoffrey Hinton joined Google (Google Brain) in 2013 and worked there until his 2023 resignation. LeCun has been at Meta AI, and Bengio has been at Université de Montréal / Mila."
+  },
+  {
+    "id": 6,
+    "category": "multi_hop",
+    "question": "Which OpenAI co-founder was previously a PhD student of Geoffrey Hinton?",
+    "reference": "Ilya Sutskever was a PhD student of Geoffrey Hinton at the University of Toronto and co-authored AlexNet with Hinton and Alex Krizhevsky in 2012. Sutskever later co-founded OpenAI in 2015."
+  },
+  {
+    "id": 7,
+    "category": "multi_hop",
+    "question": "Which architecture, developed by Google Brain, is the foundation for both GPT-4 and Google's Gemini?",
+    "reference": "The Transformer architecture, introduced by Google Brain in the 2017 paper 'Attention Is All You Need', underlies both OpenAI's GPT-4 and Google DeepMind's Gemini family of models."
+  },
+  {
+    "id": 8,
+    "category": "multi_hop",
+    "question": "Name a connection between DeepMind's AlphaFold and a Nobel Prize.",
+    "reference": "Demis Hassabis, co-founder of DeepMind, shared the 2024 Nobel Prize in Chemistry in part for AlphaFold's protein-structure predictions."
+  },
+  {
+    "id": 9,
+    "category": "synthesis",
+    "question": "How does GraphRAG differ from Basic RAG, and why does it matter for token efficiency?",
+    "reference": "Basic RAG retrieves text chunks similar to a query via vector embeddings and feeds those chunks into the LLM. GraphRAG additionally builds a knowledge graph of entities and relationships, enabling multi-hop reasoning and a more focused, smaller context. This typically reduces the number of tokens sent to the LLM at equivalent or better answer accuracy."
+  },
+  {
+    "id": 10,
+    "category": "synthesis",
+    "question": "What training technique, used by both ChatGPT and Claude, was pioneered by OpenAI and DeepMind around 2017?",
+    "reference": "Reinforcement learning from human feedback (RLHF) was pioneered jointly by OpenAI and Google DeepMind in 2017 and is used to fine-tune large language models including ChatGPT, GPT-4, and Anthropic's Claude."
+  },
+  {
+    "id": 11,
+    "category": "multi_hop",
+    "question": "Which mechanism, popularized by Bahdanau and colleagues for neural machine translation in 2014, later became the foundational primitive of the Transformer architecture in 2017?",
+    "reference": "The attention mechanism was popularized by Bahdanau, Cho, and Bengio in their 2014 paper 'Neural Machine Translation by Jointly Learning to Align and Translate' for encoder-decoder sequence-to-sequence models. The concept of attention became the central primitive of the Transformer architecture introduced by Vaswani and colleagues in the 2017 'Attention Is All You Need' paper, where it fully replaced recurrence."
+  },
+  {
+    "id": 12,
+    "category": "multi_hop",
+    "question": "What sequence-modeling architecture, introduced by Sepp Hochreiter and Jürgen Schmidhuber in 1997, dominated NLP throughout the 2000s and early 2010s before the Transformer?",
+    "reference": "Long short-term memory (LSTM), introduced by Sepp Hochreiter and Jürgen Schmidhuber in 1997, was the dominant sequence-modeling architecture used in NLP and speech recognition through the 2000s and early 2010s. It used gated recurrent connections to address the vanishing-gradient problem of vanilla RNNs, and was the standard approach for tasks like machine translation until the Transformer architecture replaced it starting in 2017."
+  },
+  {
+    "id": 13,
+    "category": "synthesis",
+    "question": "Compare dropout and batch normalization as regularization techniques in deep learning. Who introduced each, and at which institution?",
+    "reference": "Dropout was introduced by Geoffrey Hinton, Nitish Srivastava, and colleagues at the University of Toronto in 2012. It works by randomly deactivating neurons during training to prevent co-adaptation of feature detectors, acting as a form of stochastic regularization. Batch normalization was introduced by Sergey Ioffe and Christian Szegedy at Google in 2015. It normalizes the activations within mini-batches to reduce internal covariate shift, which both regularizes the network and substantially speeds up training."
+  },
+  {
+    "id": 14,
+    "category": "multi_hop",
+    "question": "Which Stanford researcher created the image dataset that AlexNet won on at the 2012 ImageNet competition?",
+    "reference": "Fei-Fei Li, a professor at Stanford University, created the ImageNet dataset starting in 2007. AlexNet won the 2012 ImageNet Large Scale Visual Recognition Challenge (ILSVRC), built by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton at the University of Toronto, using this dataset as the benchmark."
+  }
+]

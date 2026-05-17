@@ -103,8 +103,9 @@ yarn-error.log*
 *.pt
 *.pth
 
-# Data files (often large/sensitive)
-data/
+# Data files (often large/sensitive) — anchor to repo root so nested `data/`
+# folders elsewhere (like frontend/public/data/) aren't accidentally hidden.
+/data/
 
 # Project-specific uploads (keep directory, ignore contents except .gitkeep)
 backend/uploads/*.txt
